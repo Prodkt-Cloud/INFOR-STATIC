@@ -1,0 +1,36 @@
+---
+
+const response = await fetch("http://127.0.0.1:1337/api/learning-paths?populate=*");
+const { data } = await response.json();
+const { path } = Astro.props;
+---
+
+<section class="py-0">
+    <div class="container mx-auto px-4">
+      <!-- <div class="max-w-xl mx-auto text-center">
+        <span class="text-lg text-blue-500 font-medium">Lorem ipsum</span>
+        <h2 class="mt-6 mb-20 text-2xl text-white uppercase font-heading">Take quick action that increases your brand&apos;s regular profit.</h2>
+      </div>   -->
+      <div class="flex flex-wrap px-0 gap-y-12 -mx-0 mb-20">
+        {
+          data.map((path) => (
+            <>
+        <div class="w-full lg:w-1/3 px-2 mb-12 lg:mb-0">
+          <a class="block group" href={`path/${path.attributes.Slug}`}>
+            <img class="h-80 w-full object-cover rounded-xl" src={`${path.attributes.CardImage.data.attributes.formats.large.url}`} alt="">
+            <div class="relative pr-10">
+              <div class="absolute bg-skin-brand-solid-hover-alpha backdrop-blur-md text-indigo-9 p-8 mr-32 top-auto left-1 bottom-1 rounded-lg">
+                <div class="max-w-xs mb-5">
+                  <h3 class="text-2xl text-skin-base-high-contrast-inverse font-regular leading-4 group-hover:underline">{path.attributes.Title}</h3>
+                </div>
+                <p class="text-indigo-4/50 leading-6 mb-0text-xs">{path.attributes.ShortDescription}</p>
+              </div>
+            </div>
+          </a>
+        </div>
+    </>
+  ))
+}
+      </div>
+    </div>
+  </section>

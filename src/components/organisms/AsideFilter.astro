@@ -1,0 +1,44 @@
+---
+import AsideIndustries from '../system/AsideIndustries.astro'
+import AsideLearningLifecycle from '../system/AsideLearningLifecycle.astro'
+import AsideRoles from '../system/AsideRoles.astro'
+import { Icon } from 'astro-icon'
+
+---
+			<!-- Static sidebar for desktop -->
+			<div class="lg:fixed lg:z-50 lg:flex lg:w-2/6 lg:flex-col left-8 top-8 h-auto bottom-8">
+                <!-- Sidebar component -->
+                <div class="flex grow flex-col gap-y-2 overflow-y-auto rounded-2xl bg-base1 border border-base4 shadow-2xl p-6 overflow-y-hidden relative">
+                  <nav class="flex flex-1 flex-col gap-4 h-full">
+                      <div class=" rounded-lg">
+                          <legend class="text-base font-semibold leading-6 mb-4">Industry</legend>
+                          <AsideIndustries />
+                      </div>
+                      <div class=" rounded-lg">
+                          <legend class="text-base font-semibold leading-6 mb-4">Learning Lifecycle</legend>
+                          <AsideLearningLifecycle />
+                      </div>
+                      <div class=" rounded-lg border border-base4 overflow-hidden h-full">
+                        <div class="px-3 py-2 border-b border-base4 flex items-center">
+                          <legend class="text-base font-semibold leading-6">Roles</legend>
+                        </div>
+                        <div class="p-1px bottom-41px h-full relative">
+                          <div class="flex flex-col  h-full gap-0 overflow-x-hidden overflow-y-scroll infor-scroll max-h-full bg-base1">
+                            <h6 class="p-3 fixed top-0 sticky bg-base1 border-b border-base4 mb-0">A</h6>
+                            <ul class="flex flex-row flex-wrap p-0 pr-1px">
+                              <AsideRoles />
+                            <!-- <li href="#" class="text-xs font-medium leading-6 text-base12 rounded-md px-4 py-2 flex flex-row items-center gap-1 bg-base1 text-base9 hover:bg-base3 group cursor-pointer w-1/4"><Icon pack="carbon" name="user-role" class="w-4 w-4 group-hover:text-base12" />Developer</li>
+                            <li href="#" class="text-xs font-medium leading-6 text-base12 rounded-md px-4 py-2 flex flex-row items-center gap-1 bg-base1 text-base9 hover:bg-base3 group cursor-pointer w-1/4"><Icon pack="carbon" name="user-role" class="w-4 w-4 group-hover:text-base12" />Developer</li>
+                            <li href="#" class="text-xs font-medium leading-6 text-base12 rounded-md px-4 py-2 flex flex-row items-center gap-1 bg-base1 text-base9 hover:bg-base3 group cursor-pointer w-1/4"><Icon pack="carbon" name="user-role" class="w-4 w-4 group-hover:text-base12" />Developer</li> 
+                            <li href="#" class="text-xs font-medium leading-6 text-base12 rounded-md px-4 py-2 flex flex-row items-center gap-1 bg-base1 text-base9 hover:bg-base3 group cursor-pointer w-1/4"><Icon pack="carbon" name="user-role" class="w-4 w-4 group-hover:text-base12" />Developer</li>
+                             -->
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="p-2 rounded-lg">
+                        <button class="bg-brand9 hover:bg-brand10 active:bg-brand-11 text-base1 px-3 py-2 rounded-lg font-semibold text-sm w-full">Pull Learning Paths based on your selection</button>
+                      </div>
+                  </nav>
+                </div>
+              </div>

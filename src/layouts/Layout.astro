@@ -1,0 +1,66 @@
+---
+export interface Props {
+  title: string;
+}
+import HeadScripts from "../components/system/HeadScripts.astro";
+import AfterBodyOpen from "../components/system/AfterBodyOpen.astro";
+import Search from "../components/atoms/Search.astro";
+// import Search from "astro-pagefind/components/Search";
+import AsideFilter from "../components/organisms/AsideFilter.astro";
+const { title } = Astro.props;
+import "../styles/master.scss";
+---
+<script>
+</script>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <HeadScripts />
+  </head>
+  <body class="bg-base1 overflow-x-hidden w-vw">
+    <AfterBodyOpen />
+    <div>
+      <AsideFilter />
+
+      <div class="bg-brand1">
+        <div
+          class="sticky bg-brand9 top-0 z-40 pl-2/6 flex top-0 bottom-0 p-8 pb-0 items-center justify-right"
+          
+        >
+          <form class="w-full p-0 right-0 left-auto m-auto">
+            <label for="voice-search" class="sr-only">Search Learning Paths at Infor...</label>
+            <div class="relative w-full bg-brand9 rounded-lg p-0 mr-0 ml-auto rounded-lg w-full">
+              <Search
+                class="w-full bg-transparent"
+                placeholder="Search Learning Paths, Industry Accredidations, Courses around your role..."
+                required
+              />
+              <button
+                type="button"
+                class="absolute inset-y-0 right-0 flex items-center"
+              >
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <main class="ml-auto mr-0">
+          <div class="px-4 sm:px-6 lg:px-0 lg:pl-0">
+<!-- infor content 2 -->
+
+
+
+<!-- infor content 3 -->
+            <!-- Infor content -->
+            <slot />
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

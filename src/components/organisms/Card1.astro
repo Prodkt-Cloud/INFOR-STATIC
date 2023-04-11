@@ -1,0 +1,31 @@
+---
+import { Icon } from 'astro-icon'
+
+// const response = await fetch("http://127.0.0.1:1337/api/industries?populate=*");
+//   const { data } = await response.json();
+// console.log(data);
+  
+// const industry = data.attributes.title[0];
+
+const { image, title, subtitle, link } = Astro.props;
+---
+
+<div class="w-full group p-3.5">
+    <a href={`${link}`}>
+      <div class="relative p-6 h-full bg-white border hover:border-base6 rounded-xl shadow-sm transition-shadow hover:shadow-2xl">
+        <img class="absolute left-0 top-0" src="/bg-svgs/gradient.svg">
+        <div class="relative z-10 flex flex-col justify-between h-full">
+          <div class="mb-24 flex flex-col flex-wrap">
+            <div class="bg-brand9 shadow-inner shadow-xl  border-6 border-brand10 w-20 h-20 ml-0 mb-2 mr-auto items-center justify-center flex flex-shrink-1 rounded-full">
+                <img src={`${image}`} class="self-center m-6 flex align-center items-center max-h-10 max-w-10 m-auto object-fill filter-drop-shadow filter-invert" /></div>
+            <h3 class="mb-2 text-lg font-bold font-heading leading-snug">{title}</h3>
+            <p class="text-sm text-base8 font-medium">
+              <span>Industry</span>
+              <span class="px-2">•</span>
+              <span>Learning Paths</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>

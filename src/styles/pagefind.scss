@@ -1,0 +1,25 @@
+
+.pagefind-ui__form {
+  @apply my-auto h-20 relative ml-auto mr-0 rounded-lg w-full flex-grow-1 ;
+}
+.pagefind-ui__search-input {
+  @apply h-12 absolute mr-0 right-0 ml-auto rounded-lg shadow-lg px-4;
+  width: calc(100% - 54px);
+}
+.pagefind-ui__search-clear {
+  @apply bg-brand9 rounded-md z-30 py-2 absolute w-16 text-base1 ml-auto mr-0 left-auto right-1 top-1 text-center;
+}
+.pagefind-ui__drawer {
+  // gap: calc(60px * var(--pagefind-ui-scale));
+  top: 0;
+  height: 0px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  @apply mt-auto mb-0;
+}
+
+.pagefind-ui__results, .pagefind-ui__results-area {
+  @apply bg-base-1 shadow-xl border-0 w-full mr-0 ml-auto mt-14 p-8 rounded-lg left-0 right-0;
+  width: calc(100% - 54px);
+}

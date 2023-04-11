@@ -1,0 +1,60 @@
+
+@import "pagefind.scss";
+
+
+:root, :root .theme-light, :root .theme-dark {
+    --font-base: 'Plus Jakarta Sans', sans-serif;
+}
+
+body, html {
+    font-family: var(--font-base);
+    @apply antialiased;
+}
+
+
+/*width*/
+.infor-scroll::-webkit-scrollbar, :root::-webkit-scrollbar {
+width:12px;
+background-color:rgb(255, 255, 255);
+}
+/*track*/
+.infor-scroll::-webkit-scrollbar-track, :root::-webkit-scrollbar-track {
+background:rgba(255, 255, 255, 0.5);
+border-width:1px;
+border-style:solid;
+border-color:rgb(242, 242, 242);
+border-radius:12px;
+}
+/*thumb*/
+.infor-scroll::-webkit-scrollbar-thumb, :root::-webkit-scrollbar-thumb {
+background:rgb(209, 209, 209);
+border-width:1px;
+border-style:solid;
+border-color:rgb(255, 255, 255);
+border-radius:12px;
+box-shadow:rgb(255, 255, 255) 1px 0px 12px 4px;
+}
+/*thumb hover*/
+.infor-scroll::-webkit-scrollbar-thumb:hover, :root::-webkit-scrollbar-thumb:hover {
+background:rgba(213, 213, 213, 1);
+border-width:1px;
+border-style:solid;
+border-color:rgba(255, 255, 255, 1);
+border-radius:12px;
+border-top-left-radius:12px;
+border-top-right-radius:12px;
+border-bottom-left-radius:12px;
+border-bottom-right-radius:12px;
+box-shadow: 1px 0px 12px 4px rgba(188, 188, 188, 1);
+}
+/*thumb pressed*/
+.infor-scroll::-webkit-scrollbar-thumb:active, :root::-webkit-scrollbar-thumb:active {
+background:rgba(233, 233, 233, 1);
+border-color:rgba(255, 255, 255, 1);
+border-radius:12px;
+border-top-left-radius:12px;
+border-top-right-radius:12px;
+border-bottom-left-radius:12px;
+border-bottom-right-radius:12px;
+box-shadow: 1px 0px 10px 4px rgba(255, 255, 255, 1);
+}

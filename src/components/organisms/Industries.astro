@@ -1,0 +1,24 @@
+---
+import Layout from '../../layouts/Layout.astro';
+const response = await fetch("http://127.0.0.1:1337/api/distribution?populate=*");
+const { data } = await response.json();
+const { distribution } = Astro.props;
+---
+
+<section class="py-12 md:py-24 lg:py-32">
+    <div class="container mx-auto px-4">
+      <div class="max-w-2xl mx-auto px-4 lg:max-w-none">
+        <div class="flex flex-wrap">
+          <div class="w-full lg:w-1/2 relative">
+            <img class="absolute top-0 left-0 w-full h-full img-fluid rounded-2xl" alt="" style="object-fit: cover;">
+            <div class="max-w-lg pt-8 px-5 lg:px-8 pb-80 relative text-skin-base-low-contrast">
+              <span class="font-medium text-xs">Global Workforce Training</span>
+              <h4 class="font-bold text-4xl sm:text-4xl mt-2 mb-6 text-skin-base-high-contrast-inverse">{data.attributes.Title}</h4>
+              <a class="inline-block px-6 py-4 text-center text-xs font-bold bg-skin-brand-solid text-skin-base-high-contrast-inverse hover:bg-yellow-600 transition duration-200" href={`path/${data.attributes.Title}`}>EXPLORE</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+

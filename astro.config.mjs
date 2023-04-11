@@ -1,10 +1,17 @@
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
+import UnoCSS from "@unocss/astro";
+import image from "@astrojs/image";
+import pagefind from "astro-pagefind";
+import vercel from "@astrojs/vercel/static";
 
-import sitemap from '@astrojs/sitemap';
+import alpinejs from "@astrojs/alpinejs";
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://example.com',
-	integrations: [mdx(), sitemap()],
+  integrations: [UnoCSS({
+    configFile: './prodkt.config.ts'
+  }), image(), mdx(), pagefind(), alpinejs()],
+  output: "static",
+  adapter: vercel()
 });
