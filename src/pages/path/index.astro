@@ -2,6 +2,8 @@
 import Layout from '../../layouts/Layout.astro';
 
 import SectionNine from '../../components/sections/SectionNine.astro';
+import Card1 from '../../components/organisms/Card1.astro';
+import Card2 from '../../components/organisms/Card2.astro';
 
 const response = await fetch("http://127.0.0.1:1337/api/learning-paths?populate=*");
 const { data } = await response.json();
@@ -19,18 +21,14 @@ const { path } = Astro.props
 ---
 
 <Layout title="index">
-	<main> 
-    {
-      data.map((path) => (
-        <>
-          <h2>{path.attributes.title}</h2>
-          <p>{path.attributes.description}</p>
-        </>
-      ))
-    }
+	<main>
+<SectionNine>
+  {
+    data.map((path) => (
+      <Card2 title={`${path.attributes.title}`} description={`${path.attributes.description}`} />
+    ))
+  }
 
-
-
-<SectionNine />
+</SectionNine>
 </main>
 </Layout>

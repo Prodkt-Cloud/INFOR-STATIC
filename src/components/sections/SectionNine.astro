@@ -1,9 +1,13 @@
 <div class="relative max-w-vw">
   <div class="overflow-visible relative" style="z-index: 2;">
+    <section class="py-24 pl-2/6 bg-brand1 overflow-hidden">
+        <div class="container flex flex-wrap pl-16 pr-4 mx-auto">
+    <slot />
+    </div>
+    </section>
     <div
       class="pt-0 mx-auto w-64 xl:flex xl:w-auto xl:justify-center sm:w-64 sm:pt-0"
     >
-    <slot />
       <div
         class="grid justify-items-center w-64 font-sans opacity-100 xl:w-64 xl:justify-items-stretch xl:gap-y-0 sm:w-64 sm:gap-y-0"
         style='transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; opacity: 1; gap: 0px 20px; grid-template: "." / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; grid-auto-columns: 1fr;'

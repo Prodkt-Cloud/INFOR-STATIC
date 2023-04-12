@@ -1,4 +1,8 @@
-        <!-- CARD HOUSING -->
+---
+const { title, description, url } = Astro.props
+---
+
+<!-- CARD HOUSING -->
         <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-6">
             <!-- CARD -->
           <div class="relative p-6  bg-white border hover:border-base6 rounded-xl shadow-sm transition-shadow hover:shadow-2xl">
@@ -14,13 +18,13 @@
             -webkit-filter: drop-shadow(7px 7px 7px #cccccc);">
 <img class="w-32 h-32" src="/infor__cardIcon_1.svg">
             </div>
-            <h4 class="text-xl text-base12 font-bold mb-3">In-flight Management</h4>
-            <p class="text-base11 mb-5">This learning path is for Project Managers who utilize various Infor Deployment Method (IDM) part of their responsibilities. As part of Project Management Foundations, completion of this path is expected within 30 days of your start date.</p>
+            <h4 class="text-xl text-base12 font-bold mb-3">{title}</h4>
+            <p class="text-base11 mb-5">{description}</p>
             <div class="flex items-center mb-6">
               <div class="flex mr-2">
-                <img class="w-8 h-8 rounded-full object-cover" src="avatars/tovuti_avatar_4.jpg" alt="">
-                <img class="w-8 h-8 -ml-2 rounded-full object-cover" src="avatars/tovuti_avatar_8.jpg" alt="">
-                <img class="w-8 h-8 -ml-2 rounded-full object-cover" src="avatars/tovuti_avatar_9.jpg" alt="">
+                <img class="w-8 h-8 rounded-full object-cover" src="/avatars/tovuti_avatar_4.jpg" alt="">
+                <img class="w-8 h-8 -ml-2 rounded-full object-cover" src="/avatars/tovuti_avatar_8.jpg" alt="">
+                <img class="w-8 h-8 -ml-2 rounded-full object-cover" src="/avatars/tovuti_avatar_9.jpg" alt="">
                 <div class="flex items-center justify-center w-8 h-8 -ml-2 bg-brand9 rounded-full">
                   <div class="flex items-center justify-center align-center w-7 h-7 text-xs text-base1 font-semibold rounded-full pb-1 leading-auto">+2</div>
                 </div>
