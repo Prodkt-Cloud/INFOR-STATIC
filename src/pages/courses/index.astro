@@ -1,0 +1,31 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const response = await fetch("http://127.0.0.1:1337/api/courses?populate=*");
+const { data } = await response.json();
+export function getStaticPaths() {
+  return data.map((course) => {
+    return {
+      params: { slug: course.attributes.slug },
+      props: { course },
+    };
+  });
+}
+
+const { course } = Astro.props
+
+---
+
+<Layout title="index">
+	<main> 
+    {
+      data.map((course) => (
+        <>
+          <h2>{course.attributes.title}</h2>
+          <p>{course.attributes.course.shortDescription}</p>
+        </>
+      ))
+    }
+
+</main>
+</Layout>

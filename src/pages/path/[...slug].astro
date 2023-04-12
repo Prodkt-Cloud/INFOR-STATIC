@@ -1,39 +1,26 @@
 ---
-
-// export async function getStaticPaths() {
-//     const response = await fetch("http://127.0.0.1:1337/api/learning-paths?populate=*");
-//     const { data } = await response.json();
-    
-//     return data.map((path) => {
-//       return {
-//         params: { id: path.id },
-//         props: { path },
-//       };
-//     });
-//   }
-
-// const { path } = Astro.params;
-// const { title } = Astro.props;
-
-
-
-import { CollectionEntry, getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 
-export async function getStaticPaths() {
-    const response = await fetch("http://127.0.0.1:1337/api/learning-paths?populate=*");
-    const { data } = await response.json();
-	return data.map((path) => ({
-		params: { slug: path.slug },
-		props: path,
-	}));
-}
-// type Props = CollectionEntry<'blog'>;
 
-const path = Astro.props;
-const { Content } = await path.render();
+export async function getStaticPaths() {
+const response = await fetch("http://127.0.0.1:1337/api/learning-paths?populate=*");
+const { data } = await response.json();
+  return data.map((path) => {
+    return {
+      params: { slug: path.attributes.slug },
+      props: { path },
+    };
+  });
+}
+
+const { path } = Astro.props
 ---
 
-<h2>{path.attributes.title}</h2>
-<h1>test</h1>
-<div></div>
+<Layout title="index">
+	<main> 
+
+          <h2>{path.attributes.title}</h2>
+          <p>{path.attributes.description}</p>
+
+</main>
+</Layout>

@@ -1,0 +1,32 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const response = await fetch("http://127.0.0.1:1337/api/learning-lifecycles?populate=*");
+const { data } = await response.json();
+export function getStaticPaths() {
+  return data.map((cycle) => {
+    return {
+      params: { slug: cycle.attributes.slug },
+      props: { cycle },
+    };
+  });
+}
+
+
+const { slug, cycle } = Astro.props
+
+---
+
+<Layout title="index">
+	<main> 
+    {
+      data.map((cycle) => (
+        <>
+          <h2>{cycle.attributes.title}</h2>
+          <p>{cycle.attributes.description}</p>
+        </>
+      ))
+    }
+
+</main>
+</Layout>

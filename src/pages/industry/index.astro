@@ -3,12 +3,15 @@ import Layout from '../../layouts/Layout.astro';
 const response = await fetch("http://127.0.0.1:1337/api/industry?populate=*");
 const { data } = await response.json();
 const { path } = Astro.props;
+import SectionTwo from '../../components/sections/SectionTwo.astro';
 
 
 ---
 
 <Layout title="index">
 	<main>
+
+<SectionTwo />
 <!-- {
     data.map((path) => (
     <>  
