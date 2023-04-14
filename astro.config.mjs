@@ -9,6 +9,9 @@ import alpinejs from "@astrojs/alpinejs";
 
 // https://astro.build/config
 export default defineConfig({
+  build: {
+    format: "file",
+  },
   integrations: [UnoCSS({
     configFile: './prodkt.config.ts'
   }), image(), mdx(), pagefind(), alpinejs()],

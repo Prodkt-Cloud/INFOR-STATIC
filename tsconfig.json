@@ -1,10 +1,13 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
+    "moduleResolution": "nodenext",
+    "baseUrl": ".",
     "strictNullChecks": true,
     "paths": {
       "@components/*": ["src/components/*"],
-      "@assets/*": ["public/*"]
+      "@assets/*": ["public/*"],
+      "~/*": ["src/*"]
     }
   }
 }
