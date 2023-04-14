@@ -1,0 +1,35 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+import SectionNine from '../../components/sections/SectionNine.astro';
+import Tabs2 from '../../components/organisms/Tabs2.astro';
+import NewCard1 from '../../components/molecules/NewCard1.astro';
+
+const response = await fetch("http://127.0.0.1:1337/api/learning-paths?populate=*");
+const { data } = await response.json();
+export function getStaticPaths() {
+  return data.map((path) => {
+    return {
+      params: { slug: path.attributes.slug },
+      props: { path },
+    };
+  });
+}
+
+const { path } = Astro.props
+
+---
+
+<Layout title="index">
+  <Tabs2 />
+<SectionNine class=" overflow-hidden">
+  <div class="grid grid-cols-3 justify-items-stretch grid-rows-1 relative top-0 gap-4 items-stretch">
+  {
+    data.map((path) => (
+      <NewCard1 url={`${path.attributes.slug}`} title={`${path.attributes.title}`} description={`${path.attributes.description}`} />
+      
+    ))
+  }
+  </div>
+</SectionNine>
+</Layout>

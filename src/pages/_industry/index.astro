@@ -1,0 +1,29 @@
+---
+
+import Layout from '../../layouts/Layout.astro';
+import Tabs from '../../components/organisms/Tabs.astro';
+import Card2 from '../../components/organisms/Card2.astro';
+const response = await fetch("http://127.0.0.1:1337/api/industries?populate=*");
+const { data } = await response.json();
+export function getStaticPaths() {
+  return data.map((industry) => {
+    return {
+      params: { slug: industry.attributes.slug },
+      props:  industry ,
+    };
+  });
+}
+
+const { industry } = Astro.props
+---
+
+<Layout title="index">
+
+    {
+      data.map((industry) => (
+  <a href={`${industry.attributes.slug}`}>{industry.attributes.title}</a>
+        <Card2 title={`${industry.attributes.title}`} description={`${industry.attributes.description}`} />
+      ))
+    }
+  
+  </Layout>

@@ -1,0 +1,16 @@
+---
+const { title, description, url } = Astro.props
+---
+
+<div class="top-0 bottom-0 h-full top-8">
+    <a href={`${url}`} class="mx-auto">
+      <div class="relative pt-16 h-full top-0 bottom-0 pb-10 group px-8 bg-brand1 rounded-2xl overflow-hidden">
+        <img class="absolute top-0 left-0 h-full w-full object-cover" src="/Hypercolor Gradient.jpeg" alt="">
+        <div class="relative h-full flex flex-col">
+          <h3 class="text-3xl md:text-4xl font-bold text-brand12 mb-6">{title}</h3>
+          <p class="font-medium text-blue-200 mb-36">{description}</p>
+          <a class="w-full min-w-full px-6 top-auto bottom-0 mt-auto mb-0 py-3 leading-6 text-center font-semibold text-brand9 hover:text-brand3 bg-brand1 hover:bg-brand12 transition duration-200 rounded-lg" href="#">Get Started</a>
+        </div>
+      </div>
+    </a>
+  </div>

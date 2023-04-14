@@ -58,3 +58,62 @@ border-bottom-left-radius:12px;
 border-bottom-right-radius:12px;
 box-shadow: 1px 0px 10px 4px rgba(255, 255, 255, 1);
 }
+
+
+.infor-lifecycle-card:nth-child(1) {
+    @apply bg-[#FFDD63] text-amber12;
+}
+.infor-lifecycle-card:nth-child(2) {
+    @apply bg-[#63FF8F] text-base12;
+}
+.infor-lifecycle-card:nth-child(3) {
+    @apply bg-[#63D0FF] text-base12;
+}
+.infor-lifecycle-card:nth-child(4) {
+    @apply bg-violet9;
+}
+.infor-lifecycle-card:nth-child(5) {
+    @apply bg-tomato9;
+}
+
+
+#toggleFilters.collapseFilters {
+    @apply calc(left-2/6 - -left-1.8/6) transition-all duration-1000;
+  }
+   
+#inforHeader {
+    @apply pl-2/6 px-8 transition-all duration-1000;
+  }
+
+  #inforHeader.collapseFilters {
+    @apply pl-8 transition-all duration-1000;
+  }
+
+  #inforMainSection {
+    @apply transition-all py-8 duration-1000 pl-[calc(33.3%+48px)] pr-4;
+  }
+
+  #inforMainSection.collapseFilters {
+    @apply pl-0;
+  }
+
+  div:has( > span + span.inforRole-list) {
+    @apply bg-base1 text-base11 hover:bg-base5 border-none;
+  }
+
+  div:has( > span + span.inforRole-list) span:first-of-type {
+    @apply bg-brand3 rounded border-1 border-brand5 hover:focus:bg-brand9 w-4 h-4 ring-0 shadow-none transition-all;
+  }
+
+  div:has(>span+span.inforRole-list):hover,  div:has(> span + span.inforRole-list[aria-checked="true"]) {
+    @apply text-base12;
+  }
+
+  div:has(>span+span.inforRole-list):hover:hover, div:has(>span+span.inforRole-list[aria-checked=true]):hover {
+    display:none;
+    @apply inline-flex bg-base12 text-brand1 shrink-0 items-center justify-center border-3 border-base1 group-hover:border-base1 bg-base1 hover:bg-brand9 transition-all;
+  }
+
+  div:has(>span+span.inforRole-list[aria-checked=true]), div:has(> span + span.inforRole-list[aria-checked=true]) div {
+    @apply text-brand1;
+  }

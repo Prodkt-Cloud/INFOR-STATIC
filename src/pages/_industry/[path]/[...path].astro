@@ -1,0 +1,36 @@
+---
+
+import Layout from '../../layouts/Layout.astro';
+import Card3 from '../../components/organisms/Card3.astro';
+import Tabs from '../../components/organisms/Tabs.astro';
+
+const response = await fetch("http://127.0.0.1:1337/api/learning-roles?populate=*");
+const { data } = await response.json();
+
+export async function getStaticPaths() {
+const response = await fetch("http://127.0.0.1:1337/api/industries?populate=*");
+const { data } = await response.json();
+  return data.map((path) => {
+    return {
+      params: { slug: path.attributes.slug },
+      props: path.attributes.slug,
+    };
+  });
+}
+
+const { path } = Astro.params
+---
+
+<Layout title="index">
+
+
+<ul class="grid grid-cols-4">
+  {
+    data.map((path) => (
+  <li><a href={`${industries.attributes.slug}/${role}/${path.attributes.slug}`}>{`${path.attributes.title}`}</a></li>
+  ))
+  }
+
+</ul>
+
+</Layout>

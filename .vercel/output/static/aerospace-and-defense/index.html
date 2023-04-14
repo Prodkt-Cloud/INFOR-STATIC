@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="generator" content="Astro v2.2.1">
+    <title>index</title>
+    <!-- Google Tag Manager --><script client:load>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PVDLBXZ');</script>
+<!-- End Google Tag Manager -->
+  <link rel="stylesheet" href="/_astro/index.8648828e.css" /><script type="module" src="/_astro/hoisted.1dc806c2.js"></script>
+<script type="module" src="/_astro/page.0fc6666a.js"></script></head>
+  <body class="bg-base3 overflow-x-hidden w-vw">
+    <!-- Google Tag Manager (noscript) --><noscript><iframe title="Google Analytics" src="https://www.googletagmanager.com/ns.html?id=GTM-PVDLBXZ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div>
+      <!-- Static sidebar for desktop --><!-- <div class="lg:fixed lg:z-50 lg:w-2/6 lg:flex-col left-8 top-8 h-auto bottom-8 transform"> --><div id="toggleFilters" class="lg:fixed lg:z-50 lg:w-2/6 lg:flex-col left-8 top-8  bottom-8 transition-all duration-1000">
+          
+                <!-- Sidebar component -->
+                <div class="flex flex-col h-92vh gap-y-2 overflow-y-auto rounded-2xl bg-base1 border border-base4 shadow-2xl p-6 overflow-y-hidden relative">
+                  <a id="toggleBtn" class="toggleBtn inline-block absolute top-0 right-0 m-6 text-base11 hover:text-base11" href="#">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </a>
+                  <nav class="flex flex-1 flex-col gap-4 h-full">
+                      <div class=" rounded-lg">
+                          <legend class="text-base font-semibold leading-6 mb-4">Industry</legend>
+                          <!-- Radio Group --><div x-data="{
+        value: null,
+        select(option) { this.value = option },
+        isSelected(option) { return this.value === option },
+        hasRovingTabindex(option, el) {
+            // If this is the first option element and no option has been selected, make it focusable.
+            if (this.value === null && Array.from(el.parentElement.children).indexOf(el) === 0) return true
+
+            return this.isSelected(option)
+        },
+        selectNext(e) {
+            let el = e.target
+            let siblings = Array.from(el.parentElement.children)
+            let index = siblings.indexOf(el)
+            let next = siblings[index === siblings.length - 1 ? 0 : index + 1]
+
+            next.click(); next.focus();
+        },
+        selectPrevious(e) {
+            let el = e.target
+            let siblings = Array.from(el.parentElement.children)
+            let index = siblings.indexOf(el)
+            let previous = siblings[index === 0 ? siblings.length - 1 : index - 1]
+
+            previous.click(); previous.focus();
+        },
+    }" @keydown.down.stop.prevent="selectNext" @keydown.right.stop.prevent="selectNext" @keydown.up.stop.prevent="selectPrevious" @keydown.left.stop.prevent="selectPrevious" role="radiogroup" :aria-labelledby="$id('radio-group-label')" x-id="['radio-group-label']" class="w-full">
+
+    <!-- Radio Group Label -->
+    <label :id="$id('radio-group-label')" role="none" class="hidden">Industries: <span x-text="value"></span></label>
+    <div class="mt-4 flex flex-wrap justify-items-stretch w-auto gap-2" ">
+
+        <!-- Option --><div x-data="{ option: 'Aerospace &#38; Defense' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2 :class=&#34;{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-2" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Aerospace &amp; Defense</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Aerospace &amp; Defense
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Automotive' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2 :class=&#34;{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-2" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Automotive</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Automotive
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Distribution' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2 :class=&#34;{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-2" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Distribution</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Distribution
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Fashion' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2 :class=&#34;{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-2" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Fashion</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Fashion
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Food &#38; Beverage' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2 :class=&#34;{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-2" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Food &amp; Beverage</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Food &amp; Beverage
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Healthcare' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2 :class=&#34;{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-2" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Healthcare</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Healthcare
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Hospitality' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2 :class=&#34;{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-2" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Hospitality</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Hospitality
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Manufacturing' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2 :class=&#34;{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-2" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Manufacturing</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Manufacturing
+                </span>
+            </span>
+        </div>
+    </div>
+</div>
+                      </div>
+                      <div class=" rounded-lg">
+                          <legend class="text-base font-semibold leading-6 mb-4">Learning Lifecycle</legend>
+                          <!-- Radio Group --><div x-data="{
+        value: null,
+        select(option) { this.value = option },
+        isSelected(option) { return this.value === option },
+        hasRovingTabindex(option, el) {
+            // If this is the first option element and no option has been selected, make it focusable.
+            if (this.value === null && Array.from(el.parentElement.children).indexOf(el) === 0) return true
+
+            return this.isSelected(option)
+        },
+        selectNext(e) {
+            let el = e.target
+            let siblings = Array.from(el.parentElement.children)
+            let index = siblings.indexOf(el)
+            let next = siblings[index === siblings.length - 1 ? 0 : index + 1]
+
+            next.click(); next.focus();
+        },
+        selectPrevious(e) {
+            let el = e.target
+            let siblings = Array.from(el.parentElement.children)
+            let index = siblings.indexOf(el)
+            let previous = siblings[index === 0 ? siblings.length - 1 : index - 1]
+
+            previous.click(); previous.focus();
+        },
+    }" @keydown.down.stop.prevent="selectNext" @keydown.right.stop.prevent="selectNext" @keydown.up.stop.prevent="selectPrevious" @keydown.left.stop.prevent="selectPrevious" role="radiogroup" :aria-labelledby="$id('radio-group-label')" x-id="['radio-group-label']" class="w-full">
+
+    <!-- Radio Group Label -->
+    <label :id="$id('radio-group-label')" role="none" class="hidden">Industries: <span x-text="value"></span></label>
+    <div class="mt-4 flex flex-wrap justify-items-stretch w-auto gap-2" ">
+
+        <!-- Option --><div x-data="{ option: 'Explore' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2 :class=&#34;{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-2" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Explore</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Explore
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Prepare' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2 :class=&#34;{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-2" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Prepare</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Prepare
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Execute' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2 :class=&#34;{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-2" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Execute</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Execute
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Sustain' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2 :class=&#34;{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-2" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Sustain</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Sustain
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Elevate' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2 :class=&#34;{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-2" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Elevate</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Elevate
+                </span>
+            </span>
+        </div>
+    </div>
+</div>
+                      </div>
+                      <div class=" rounded-lg border border-base4 overflow-hidden h-full">
+                        <div class="px-3 py-2 border-b border-base4 flex items-center">
+                          <legend class="text-base font-semibold leading-6">Roles</legend>
+                        </div>
+                        <div class="p-1px bottom-41px h-full relative">
+                          <div class="flex flex-col  h-full gap-0 overflow-x-hidden overflow-y-scroll infor-scroll max-h-full bg-base1">
+                            <h6 class="p-3 fixed top-0 sticky bg-base1 border-b border-base4 mb-0">A</h6>
+                            <ul class="flex flex-row flex-wrap p-0 pr-1px">
+                              <!-- Radio Group --><div x-data="{
+        value: null,
+        select(option) { this.value = option },
+        isSelected(option) { return this.value === option },
+        hasRovingTabindex(option, el) {
+            // If this is the first option element and no option has been selected, make it focusable.
+            if (this.value === null && Array.from(el.parentElement.children).indexOf(el) === 0) return true
+
+            return this.isSelected(option)
+        },
+        selectNext(e) {
+            let el = e.target
+            let siblings = Array.from(el.parentElement.children)
+            let index = siblings.indexOf(el)
+            let next = siblings[index === siblings.length - 1 ? 0 : index + 1]
+
+            next.click(); next.focus();
+        },
+        selectPrevious(e) {
+            let el = e.target
+            let siblings = Array.from(el.parentElement.children)
+            let index = siblings.indexOf(el)
+            let previous = siblings[index === 0 ? siblings.length - 1 : index - 1]
+
+            previous.click(); previous.focus();
+        },
+    }" @keydown.down.stop.prevent="selectNext" @keydown.right.stop.prevent="selectNext" @keydown.up.stop.prevent="selectPrevious" @keydown.left.stop.prevent="selectPrevious" role="radiogroup" :aria-labelledby="$id('radio-group-label')" x-id="['radio-group-label']" class="w-full">
+
+    <!-- Radio Group Label -->
+    <label :id="$id('radio-group-label')" role="none" class="hidden">Industries: <span x-text="value"></span></label>
+    <div class="mt-2px grid grid-cols-2 gap-2px " ">
+
+        <!-- Option --><div x-data="{ option: 'A Auxiliary' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">A Auxiliary</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    A Auxiliary
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'A Class Lineman' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">A Class Lineman</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    A Class Lineman
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'A-Operator' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">A-Operator</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    A-Operator
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'A/C Tech (Air Conditioning Technician)' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">A/C Tech (Air Conditioning Technician)</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    A/C Tech (Air Conditioning Technician)
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'A/C Technician (Air Conditioning Technician)' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">A/C Technician (Air Conditioning Technician)</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    A/C Technician (Air Conditioning Technician)
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Aadc Plans Staff Officer' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Aadc Plans Staff Officer</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Aadc Plans Staff Officer
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Abalone Fisherman' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Abalone Fisherman</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Abalone Fisherman
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Abalone Processor' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Abalone Processor</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Abalone Processor
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Abatement Worker' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Abatement Worker</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Abatement Worker
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Abattoir Supervisor' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Abattoir Supervisor</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Abattoir Supervisor
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Able Bodied Seaman (AB Seaman)' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Able Bodied Seaman (AB Seaman)</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Able Bodied Seaman (AB Seaman)
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Able Bodied Tankerman (AB Tankerman)' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Able Bodied Tankerman (AB Tankerman)</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Able Bodied Tankerman (AB Tankerman)
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Able Bodied Watchman (AB Watchman)' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Able Bodied Watchman (AB Watchman)</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Able Bodied Watchman (AB Watchman)
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Able Seaman' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Able Seaman</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Able Seaman
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Abnormal Psychology Teacher' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Abnormal Psychology Teacher</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Abnormal Psychology Teacher
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Abrasive and Polished Products Supervisor' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Abrasive and Polished Products Supervisor</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Abrasive and Polished Products Supervisor
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Abrasive Band Winder' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Abrasive Band Winder</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Abrasive Band Winder
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Abrasive Coating Machine Operator' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Abrasive Coating Machine Operator</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Abrasive Coating Machine Operator
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Abrasive Coating Machine Set Up Operator' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Abrasive Coating Machine Set Up Operator</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Abrasive Coating Machine Set Up Operator
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Abrasive Grader' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Abrasive Grader</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Abrasive Grader
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Abrasive Grader Helper' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Abrasive Grader Helper</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Abrasive Grader Helper
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Abrasive Grinder' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Abrasive Grinder</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Abrasive Grinder
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Abrasive Mixer' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Abrasive Mixer</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Abrasive Mixer
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Abrasive Mixer Helper' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Abrasive Mixer Helper</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Abrasive Mixer Helper
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Abrasive Sawyer' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Abrasive Sawyer</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Abrasive Sawyer
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Abrasive Wheel Molder' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Abrasive Wheel Molder</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Abrasive Wheel Molder
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Abrasive Worker' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Abrasive Worker</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Abrasive Worker
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Abrasives Sales Representative' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Abrasives Sales Representative</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Abrasives Sales Representative
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Absorber Operator' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Absorber Operator</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Absorber Operator
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Absorption and Adsorption Engineer' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Absorption and Adsorption Engineer</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Absorption and Adsorption Engineer
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Absorption Operator' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Absorption Operator</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Absorption Operator
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Absorption Plant Operator' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Absorption Plant Operator</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Absorption Plant Operator
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Abstract Clerk' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Abstract Clerk</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Abstract Clerk
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Abstract Searcher' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Abstract Searcher</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Abstract Searcher
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Abstract Writer' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Abstract Writer</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Abstract Writer
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Abstracter' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Abstracter</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Abstracter
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'AC/DC Motor Repair Person' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">AC/DC Motor Repair Person</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    AC/DC Motor Repair Person
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'AC/DC Rewinder' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">AC/DC Rewinder</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    AC/DC Rewinder
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'AC/DC Winder' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">AC/DC Winder</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    AC/DC Winder
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Academic Advisement Director' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Academic Advisement Director</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Academic Advisement Director
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Academic Adviser' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Academic Adviser</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Academic Adviser
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Academic Advising Director' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Academic Advising Director</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Academic Advising Director
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Academic Advisor' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Academic Advisor</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Academic Advisor
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Academic Affairs Dean' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Academic Affairs Dean</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Academic Affairs Dean
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Academic Affairs Director' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Academic Affairs Director</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Academic Affairs Director
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Academic Affairs Vice President' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Academic Affairs Vice President</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Academic Affairs Vice President
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Academic Computing Director' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Academic Computing Director</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Academic Computing Director
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Academic Coordinator' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Academic Coordinator</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Academic Coordinator
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Academic Counselor' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Academic Counselor</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Academic Counselor
+                </span>
+            </span>
+        </div><!-- Option --><div x-data="{ option: 'Academic Dean' }" @click="select(option)" @keydown.enter.stop.prevent="select(option)" @keydown.space.stop.prevent="select(option)" :aria-checked="isSelected(option)" :tabindex="hasRovingTabindex(option, $el) ? 0 : -1" :aria-labelledby="$id('radio-option-label')" :aria-describedby="$id('radio-option-description')" x-id="['radio-option-label', 'radio-option-description']" role="radio" :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }" class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
+            <!-- Checked Indicator -->
+                <span class="mr-3 hidden aria-hidden=&#34;true&#34;" ">
+                    <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }" aria-hidden="true"></span>
+                </span>
+
+            <span class="ml-0 mr-auto inforRole-list" ">
+                <!-- Primary Label -->
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">Academic Dean</p>
+
+                <!-- Secondary Information -->
+                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
+                    Academic Dean
+                </span>
+            </span>
+        </div>
+    </div>
+</div>
+                            <!-- <li href="#" class="text-xs font-medium leading-6 text-base12 rounded-md px-4 py-2 flex flex-row items-center gap-1 bg-base1 text-base9 hover:bg-base3 group cursor-pointer w-1/4"><Icon pack="carbon" name="user-role" class="w-4 w-4 group-hover:text-base12" />Developer</li>
+                            <li href="#" class="text-xs font-medium leading-6 text-base12 rounded-md px-4 py-2 flex flex-row items-center gap-1 bg-base1 text-base9 hover:bg-base3 group cursor-pointer w-1/4"><Icon pack="carbon" name="user-role" class="w-4 w-4 group-hover:text-base12" />Developer</li>
+                            <li href="#" class="text-xs font-medium leading-6 text-base12 rounded-md px-4 py-2 flex flex-row items-center gap-1 bg-base1 text-base9 hover:bg-base3 group cursor-pointer w-1/4"><Icon pack="carbon" name="user-role" class="w-4 w-4 group-hover:text-base12" />Developer</li> 
+                            <li href="#" class="text-xs font-medium leading-6 text-base12 rounded-md px-4 py-2 flex flex-row items-center gap-1 bg-base1 text-base9 hover:bg-base3 group cursor-pointer w-1/4"><Icon pack="carbon" name="user-role" class="w-4 w-4 group-hover:text-base12" />Developer</li>
+                             -->
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="p-2 rounded-lg">
+                        <button class="bg-brand9 hover:bg-brand10 active:bg-brand-11 text-base1 px-3 py-2 rounded-lg font-semibold text-sm w-full">Pull Learning Paths based on your selection</button>
+                      </div>
+                  </nav>
+                </div>
+              </div>
+
+      <div class="">
+        <div id="inforHeader" class="sticky bg-brand9 top-0 z-40 flex top-0 bottom-0 pt-8 pb-0 items-center justify-right">
+<form class="w-full p-0 right-0 left-auto m-auto">
+  <label for="voice-search" class="sr-only">Search Learning Paths at Infor...</label>
+  <div class="relative w-full bg-brand9 rounded-lg p-0 mr-0 ml-auto rounded-lg w-full">
+    <div class="infor-searchbar h-full" data-pagefind-ui="" data-bundle-path="/_pagefind/"></div>
+    <button type="button" class="absolute inset-y-0 right-0 flex items-center">
+    </button>
+  </div>
+</form>
+</div>
+
+        <main class="">
+          <div id="inforMainSection" class="">
+            <!-- Infor content -->
+            
+
+  <div class="flex flex-col gap-0 mb-8">
+    <div class="px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-5xl">
+      
+  <div>
+    <div class="sm:hidden">
+      <label for="tabs" class="sr-only">Select a tab</label>
+      <!-- Use an "onChange" listener to redirect the user to the selected tab URL. -->
+      <select id="tabs" name="tabs" class="block w-full rounded-md border border-base9 focus:border-brand9 focus:ring-brand9">
+        
+          <option selected="">Industry</option>
+        
+          <option>Role</option>
+        
+          <option>Learning Lifecycle</option>
+        
+          <option>Learning Paths</option>
+        
+
+      </select>
+    </div>
+    <div class="hidden sm:block pb-8">
+      <nav class="isolate flex divide-x divide-base4 rounded-lg border outline-1 shadow-xl shadow-base4" aria-label="Tabs">
+        
+
+          <a href="/" class="text-gray-900 rounded-l-lg  group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-4 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state:on="Current" x-state:off="Default" aria-current="page" x-state-description="Current: &quot;text-gray-900&quot;, Default: &quot;text-base7 hover:text-base9&quot;">
+            <span>Industry</span>
+            <span aria-hidden="true" class="bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+          </a>
+        
+          <a href="/" class="text-base9 hover:text-base12 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-4 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-base7 hover:text-base9&quot;">
+            <span>Role</span>
+            <span aria-hidden="true" class="bg-base3 group-hover:bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+          </a>
+        
+          <a href="/learning-lifecycle/" class="text-base9 hover:text-base12 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-4 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-base7 hover:text-base9&quot;">
+            <span>Learning Lifecycle</span>
+            <span aria-hidden="true" class="bg-base3 group-hover:bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+          </a>
+        
+          <a href="./learning-path/" class="text-base9 hover:text-base12 rounded-r-lg group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-4 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-base7 hover:text-base9&quot;">
+            <span>Learning Paths</span>
+            <span aria-hidden="true" class="bg-base3 group-hover:bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+          </a>
+        
+      </nav>
+    </div>
+  </div>
+
+    </div>
+  </div>
+    <div class="px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-5xl">
+      
+  <div>
+    <div class="sm:hidden">
+      <label for="tabs" class="sr-only">Select a tab</label>
+      <!-- Use an "onChange" listener to redirect the user to the selected tab URL. -->
+      <select id="tabs" name="tabs" class="block w-full rounded-md border border-base9 focus:border-brand9 focus:ring-brand9">
+        
+          <!-- <option selected="">Industry</option>
+        
+          <option>Role</option>
+        
+          <option>Learning Lifecycle</option>
+        
+          <option>Learning Paths</option> -->
+        
+
+          <option selected="">A</option>
+          <option>B</option>
+          <option>C</option>
+          <option>D</option>
+          <option>E</option>
+          <option>F</option>
+          <option>G</option>
+          <option>H</option>
+          <option>I</option>
+          <option>J</option>
+          <option>K</option>
+          <option>L</option>
+          <option>M</option>
+          <option>N</option>
+          <option>O</option>
+          <option>P</option>
+          <option>Q</option>
+          <option>R</option>
+          <option>S</option>
+          <option>T</option>
+          <option>U</option>
+          <option>V</option>
+          <option>W</option>
+          <option>X</option>
+          <option>Y</option>
+          <option>Z</option>
+
+
+      </select>
+    </div>
+    <div class="hidden sm:block">
+      <nav class="isolate flex divide-x divide-base4 rounded-lg border outline-1 shadow-xl shadow-base4" aria-label="Tabs">
+        
+
+        <a href="#" class="text-gray-900 rounded-l-lg  group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-2 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state:on="Current" x-state:off="Default" aria-current="page" x-state-description="Current: &quot;text-gray-900&quot;, Default: &quot;text-base7 hover:text-base9&quot;">
+          <span>A</span>
+          <span aria-hidden="true" class="bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+        </a>
+      
+        <a href="#" class="text-base9 hover:text-base12 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-2 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-base7 hover:text-base9&quot;">
+          <span>B</span>
+          <span aria-hidden="true" class="bg-base3 group-hover:bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+        </a>
+      
+        <a href="#" class="text-base9 hover:text-base12 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-2 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-base7 hover:text-base9&quot;">
+          <span>C</span>
+          <span aria-hidden="true" class="bg-base3 group-hover:bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+        </a>
+      
+        <a href="#" class="text-base9 hover:text-base12 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-2 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-base7 hover:text-base9&quot;">
+          <span>D</span>
+          <span aria-hidden="true" class="bg-base3 group-hover:bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+        </a>
+      
+        <a href="#" class="text-base9 hover:text-base12 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-2 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-base7 hover:text-base9&quot;">
+          <span>E</span>
+          <span aria-hidden="true" class="bg-base3 group-hover:bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+        </a>
+      
+        <a href="#" class="text-base9 hover:text-base12 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-2 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-base7 hover:text-base9&quot;">
+          <span>E</span>
+          <span aria-hidden="true" class="bg-base3 group-hover:bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+        </a>
+      
+        <a href="#" class="text-base9 hover:text-base12 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-2 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-base7 hover:text-base9&quot;">
+          <span>F</span>
+          <span aria-hidden="true" class="bg-base3 group-hover:bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+        </a>
+      
+        <a href="#" class="text-base9 hover:text-base12 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-2 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-base7 hover:text-base9&quot;">
+          <span>G</span>
+          <span aria-hidden="true" class="bg-base3 group-hover:bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+        </a>
+      
+        <a href="#" class="text-base9 hover:text-base12 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-2 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-base7 hover:text-base9&quot;">
+          <span>H</span>
+          <span aria-hidden="true" class="bg-base3 group-hover:bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+        </a>
+      
+        <a href="#" class="text-base9 hover:text-base12 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-2 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-base7 hover:text-base9&quot;">
+          <span>I</span>
+          <span aria-hidden="true" class="bg-base3 group-hover:bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+        </a>
+      
+        <a href="#" class="text-base9 hover:text-base12 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-2 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-base7 hover:text-base9&quot;">
+          <span>I</span>
+          <span aria-hidden="true" class="bg-base3 group-hover:bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+        </a>
+      
+        <a href="#" class="text-base9 hover:text-base12 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-2 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-base7 hover:text-base9&quot;">
+          <span>J</span>
+          <span aria-hidden="true" class="bg-base3 group-hover:bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+        </a>
+      
+        <a href="#" class="text-base9 hover:text-base12 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-2 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-base7 hover:text-base9&quot;">
+          <span>K</span>
+          <span aria-hidden="true" class="bg-base3 group-hover:bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+        </a>
+      
+        <a href="#" class="text-base9 hover:text-base12 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-2 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-base7 hover:text-base9&quot;">
+          <span>L</span>
+          <span aria-hidden="true" class="bg-base3 group-hover:bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+        </a>
+      
+        <a href="#" class="text-base9 hover:text-base12 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-2 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-base7 hover:text-base9&quot;">
+          <span>M</span>
+          <span aria-hidden="true" class="bg-base3 group-hover:bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+        </a>
+      
+        <a href="#" class="text-base9 hover:text-base12 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-2 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-base7 hover:text-base9&quot;">
+          <span>N</span>
+          <span aria-hidden="true" class="bg-base3 group-hover:bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+        </a>
+      
+        <a href="#" class="text-base9 hover:text-base12 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-2 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-base7 hover:text-base9&quot;">
+          <span>O</span>
+          <span aria-hidden="true" class="bg-base3 group-hover:bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+        </a>
+      
+        <a href="#" class="text-base9 hover:text-base12 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-2 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-base7 hover:text-base9&quot;">
+          <span>P</span>
+          <span aria-hidden="true" class="bg-base3 group-hover:bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+        </a>
+      
+        <a href="#" class="text-base9 hover:text-base12 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-2 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-base7 hover:text-base9&quot;">
+          <span>Q</span>
+          <span aria-hidden="true" class="bg-base3 group-hover:bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+        </a>
+      
+        <a href="#" class="text-base9 hover:text-base12 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-2 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-base7 hover:text-base9&quot;">
+          <span>R</span>
+          <span aria-hidden="true" class="bg-base3 group-hover:bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+        </a>
+      
+        <a href="#" class="text-base9 hover:text-base12 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-2 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-base7 hover:text-base9&quot;">
+          <span>S</span>
+          <span aria-hidden="true" class="bg-base3 group-hover:bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+        </a>
+      
+        <a href="#" class="text-base9 hover:text-base12 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-2 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-base7 hover:text-base9&quot;">
+          <span>T</span>
+          <span aria-hidden="true" class="bg-base3 group-hover:bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+        </a>
+      
+        <a href="#" class="text-base9 hover:text-base12 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-2 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-base7 hover:text-base9&quot;">
+          <span>U</span>
+          <span aria-hidden="true" class="bg-base3 group-hover:bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+        </a>
+      
+        <a href="#" class="text-base9 hover:text-base12 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-2 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-base7 hover:text-base9&quot;">
+          <span>V</span>
+          <span aria-hidden="true" class="bg-base3 group-hover:bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+        </a>
+      
+        <a href="#" class="text-base9 hover:text-base12 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-2 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-base7 hover:text-base9&quot;">
+          <span>W</span>
+          <span aria-hidden="true" class="bg-base3 group-hover:bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+        </a>
+      
+        <a href="#" class="text-base9 hover:text-base12 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-2 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-base7 hover:text-base9&quot;">
+          <span>X</span>
+          <span aria-hidden="true" class="bg-base3 group-hover:bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+        </a>
+      
+        <a href="#" class="text-base9 hover:text-base12 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-2 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-base7 hover:text-base9&quot;">
+          <span>Y</span>
+          <span aria-hidden="true" class="bg-base3 group-hover:bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+        </a>
+      
+        <a href="#" class="text-base9 hover:text-base12 rounded-r-lg group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-2 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-base7 hover:text-base9&quot;">
+          <span>Z</span>
+          <span aria-hidden="true" class="bg-base3 group-hover:bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+        </a>
+
+
+          <!-- <a href="#" class="text-gray-900 rounded-l-lg  group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-4 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state:on="Current" x-state:off="Default" aria-current="page" x-state-description="Current: &quot;text-gray-900&quot;, Default: &quot;text-base7 hover:text-base9&quot;">
+            <span>Industry</span>
+            <span aria-hidden="true" class="bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+          </a>
+        
+          <a href="#" class="text-base9 hover:text-base12 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-4 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-base7 hover:text-base9&quot;">
+            <span>Role</span>
+            <span aria-hidden="true" class="bg-base3 group-hover:bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+          </a>
+        
+          <a href="#" class="text-base9 hover:text-base12 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-4 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-base7 hover:text-base9&quot;">
+            <span>Learning Lifecycle</span>
+            <span aria-hidden="true" class="bg-base3 group-hover:bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+          </a>
+        
+          <a href="#" class="text-base9 hover:text-base12 rounded-r-lg group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-4 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-base7 hover:text-base9&quot;">
+            <span>Learning Paths</span>
+            <span aria-hidden="true" class="bg-base3 group-hover:bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+          </a> -->
+        
+      </nav>
+    </div>
+  </div>
+
+    </div>
+  </div></div>
+
+    <div class="flex flex-col gap-0 max-w-5xl mx-auto mb-8 w-full justify-left px-4 py-3">
+    <h1 class="text-3xl font-bold text-gray-800">A</h1>
+    </div>
+
+<ul class="grid grid-cols-4 mx-auto max-w-5xl mb-8" id="infor_A">
+  <li><a href="aerospace-and-defense/it-staff" class="text-xs block font-bold text-base11 hover:text-base12 px-4 py-3">IT Staff</a></li><li><a href="aerospace-and-defense/helpdesk-leads" class="text-xs block font-bold text-base11 hover:text-base12 px-4 py-3">Helpdesk Leads</a></li><li><a href="aerospace-and-defense/system-users" class="text-xs block font-bold text-base11 hover:text-base12 px-4 py-3">System Users</a></li><li><a href="aerospace-and-defense/project-team-members" class="text-xs block font-bold text-base11 hover:text-base12 px-4 py-3">Project Team Members</a></li><li><a href="aerospace-and-defense/provisioning-contacts" class="text-xs block font-bold text-base11 hover:text-base12 px-4 py-3">Provisioning Contacts</a></li><li><a href="aerospace-and-defense/application-owners" class="text-xs block font-bold text-base11 hover:text-base12 px-4 py-3">Application Owners</a></li><li><a href="aerospace-and-defense/project-managers" class="text-xs block font-bold text-base11 hover:text-base12 px-4 py-3">Project Managers</a></li><li><a href="aerospace-and-defense/contact-administrators" class="text-xs block font-bold text-base11 hover:text-base12 px-4 py-3">Contact Administrators</a></li><li><a href="aerospace-and-defense/it-managers" class="text-xs block font-bold text-base11 hover:text-base12 px-4 py-3">IT Managers</a></li><li><a href="aerospace-and-defense/stakeholders" class="text-xs block font-bold text-base11 hover:text-base12 px-4 py-3">Stakeholders</a></li>
+
+</ul>
+
+<div class="flex flex-col gap-0 max-w-5xl mx-auto mb-8 w-full justify-left px-4 py-3">
+  <h1 class="text-3xl font-bold text-gray-800">A</h1>
+  </div>
+
+<ul class="grid grid-cols-4 mx-auto max-w-5xl mb-8" id="infor_A">
+  <li><a href="aerospace-and-defense/it-staff" class="text-xs block font-bold text-base11 hover:text-base12 px-4 py-3">IT Staff</a></li><li><a href="aerospace-and-defense/helpdesk-leads" class="text-xs block font-bold text-base11 hover:text-base12 px-4 py-3">Helpdesk Leads</a></li><li><a href="aerospace-and-defense/system-users" class="text-xs block font-bold text-base11 hover:text-base12 px-4 py-3">System Users</a></li><li><a href="aerospace-and-defense/project-team-members" class="text-xs block font-bold text-base11 hover:text-base12 px-4 py-3">Project Team Members</a></li><li><a href="aerospace-and-defense/provisioning-contacts" class="text-xs block font-bold text-base11 hover:text-base12 px-4 py-3">Provisioning Contacts</a></li><li><a href="aerospace-and-defense/application-owners" class="text-xs block font-bold text-base11 hover:text-base12 px-4 py-3">Application Owners</a></li><li><a href="aerospace-and-defense/project-managers" class="text-xs block font-bold text-base11 hover:text-base12 px-4 py-3">Project Managers</a></li><li><a href="aerospace-and-defense/contact-administrators" class="text-xs block font-bold text-base11 hover:text-base12 px-4 py-3">Contact Administrators</a></li><li><a href="aerospace-and-defense/it-managers" class="text-xs block font-bold text-base11 hover:text-base12 px-4 py-3">IT Managers</a></li><li><a href="aerospace-and-defense/stakeholders" class="text-xs block font-bold text-base11 hover:text-base12 px-4 py-3">Stakeholders</a></li>
+
+</ul>
+
+
+            <!-- Infor content -->
+          </div>
+        </main>
+      </div>
+    </div>
+  </body></html>

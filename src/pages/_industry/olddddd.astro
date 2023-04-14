@@ -1,0 +1,40 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Tabs from '../../components/organisms/Tabs.astro';
+import Card2 from '../../components/organisms/Card2.astro';
+
+
+const response = await fetch("http://127.0.0.1:1337/api/learning-roles?populate=*");
+const { data } = await response.json();
+export async function getStaticPaths() {
+const response = await fetch("http://127.0.0.1:1337/api/learning-roles?populate=*");
+const { data } = await response.json();
+  return data.map((role) => {
+    return {
+      params: { slug: role.attributes.slug },
+      props: { role },
+    };
+  });
+
+  const { data } = await response.json();
+  return data.map((role) => {
+    return {
+      params: { slug: role.attributes.slug },
+      props: { role },
+    };
+  });
+}
+
+const { role } = Astro.props
+---
+
+<Layout title="index">
+<Tabs />
+  {
+    data.map((role) => (
+<a href="">{role.attributes.title}</a>
+      <Card2 title={`${role.attributes.title}`} description={`${role.attributes.description}`} />
+    ))
+  }
+
+</Layout>

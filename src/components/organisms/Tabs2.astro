@@ -1,0 +1,54 @@
+---
+
+---
+
+<div class="px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-5xl">
+      
+  <div>
+    <div class="sm:hidden">
+      <label for="tabs" class="sr-only">Select a tab</label>
+      <!-- Use an "onChange" listener to redirect the user to the selected tab URL. -->
+      <select id="tabs" name="tabs" class="block w-full rounded-md border border-base9 focus:border-brand9 focus:ring-brand9">
+        
+          <option selected="">Industry</option>
+        
+          <option>Role</option>
+        
+          <option>Learning Lifecycle</option>
+        
+          <option>Learning Paths</option>
+        
+
+      </select>
+    </div>
+    <div class="hidden sm:block pb-8">
+      <nav class="isolate flex divide-x divide-base4 rounded-lg border outline-1 shadow-xl shadow-base4" aria-label="Tabs">
+        
+
+          <a href="/" class="text-gray-900 rounded-l-lg  group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-4 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state:on="Current" x-state:off="Default" aria-current="page" x-state-description="Current: &quot;text-gray-900&quot;, Default: &quot;text-base7 hover:text-base9&quot;">
+            <span>Industry</span>
+            <span aria-hidden="true" class="bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+          </a>
+        
+          <a href="/" class="text-base9 hover:text-base12 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-4 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-base7 hover:text-base9&quot;">
+            <span>Role</span>
+            <span aria-hidden="true" class="bg-base3 group-hover:bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+          </a>
+        
+          <a href="./learning-lifecycle/" class="text-base9 hover:text-base12 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-4 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-base7 hover:text-base9&quot;">
+            <span>Learning Lifecycle</span>
+            <span aria-hidden="true" class="bg-base3 group-hover:bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+          </a>
+        
+          <a href="learning-path/" class="text-base9 hover:text-base12 rounded-r-lg group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-4 text-center text-sm font-medium hover:bg-base2 focus:z-10" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-base7 hover:text-base9&quot;">
+            <span>Learning Paths</span>
+            <span aria-hidden="true" class="bg-base3 group-hover:bg-brand9 absolute inset-x-0 bottom-1 mx-1.5 rounded-full h-0.75"></span>
+          </a>
+        
+      </nav>
+    </div>
+  </div>
+
+    </div>
+  </div>

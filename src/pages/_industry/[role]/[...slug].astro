@@ -1,0 +1,26 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+
+export async function getStaticPaths() {
+const response = await fetch("http://127.0.0.1:1337/api/learning-paths?populate=*");
+const { data } = await response.json();
+  return data.map((walkie) => {
+    return {
+      params: { slug: walkie.attributes.slug },
+      props: { walkie },
+    };
+  });
+}
+
+const { industry } = Astro.props
+---
+
+<Layout title="index">
+	<main> 
+
+          <h2>{industry.attributes.title}</h2>
+          <p>{walkie.attributes.description}</p>
+
+</main>
+</Layout>

@@ -1,0 +1,58 @@
+---
+
+import Layout from '../../layouts/Layout.astro';
+import Card3 from '../../components/organisms/Card3.astro';
+import Tabs from '../../components/organisms/Tabs.astro';
+import Tabs2 from '../../components/organisms/Tabs2.astro';
+
+const response = await fetch("http://127.0.0.1:1337/api/learning-roles?populate=*");
+const { data } = await response.json();
+
+export async function getStaticPaths() {
+const response = await fetch("http://127.0.0.1:1337/api/industries?populate=*");
+const { data } = await response.json();
+  return data.map((industry) => {
+    return {
+      params: { industry: industry.attributes.slug },
+      props: industry.attributes.slug,
+    };
+  });
+}
+
+const { industry } = Astro.params;
+const { role } = Astro.props
+---
+
+<Layout title="index">
+
+  <div class="flex flex-col gap-0 mb-8">
+    <Tabs2 />
+    <Tabs /></div>
+
+    <div class="flex flex-col gap-0 max-w-5xl mx-auto mb-8 w-full justify-left px-4 py-3">
+    <h1 class="text-3xl font-bold text-gray-800">A</h1>
+    </div>
+
+<ul class="grid grid-cols-4 mx-auto max-w-5xl mb-8" id="infor_A">
+  {
+    data.map((role) => (
+  <li><a href={`${industry}/${role.attributes.slug}`} class="text-xs block font-bold text-base11 hover:text-base12 px-4 py-3">{`${role.attributes.title}`}</a></li>
+  ))
+  }
+
+</ul>
+
+<div class="flex flex-col gap-0 max-w-5xl mx-auto mb-8 w-full justify-left px-4 py-3">
+  <h1 class="text-3xl font-bold text-gray-800">A</h1>
+  </div>
+
+<ul class="grid grid-cols-4 mx-auto max-w-5xl mb-8" id="infor_A">
+  {
+    data.map((role) => (
+  <li><a href={`${industry}/${role.attributes.slug}`} class="text-xs block font-bold text-base11 hover:text-base12 px-4 py-3">{`${role.attributes.title}`}</a></li>
+  ))
+  }
+
+</ul>
+
+</Layout>

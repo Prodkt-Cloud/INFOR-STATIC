@@ -1,0 +1,15 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+
+export async function getStaticPaths() {
+  return [
+    { params: { role: 'role1' } },
+    { params: { role: 'role2' } },
+    { params: { role: 'role3' } },
+  ];
+}
+---
+
+<Layout title="index">
+</Layout>

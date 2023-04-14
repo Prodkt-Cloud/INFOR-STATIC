@@ -48,7 +48,7 @@ interface Props {
 
     <!-- Radio Group Label -->
     <label :id="$id('radio-group-label')" role="none" class="hidden">Industries: <span x-text="value"></span></label>
-    <div class={tightGap === true ? `mt-2px flex flex-wrap justify-items-stretch w-auto gap-2px` : `mt-4 flex flex-wrap justify-items-stretch w-auto gap-2`}">
+    <div class={tightGap === true ? `mt-2px grid grid-cols-2 gap-2px ` : `mt-4 flex flex-wrap justify-items-stretch w-auto gap-2`}">
 
         {industry.map((industry) => 
         <!-- Option -->
@@ -63,10 +63,10 @@ interface Props {
             :aria-describedby="$id('radio-option-description')"
             x-id="['radio-option-label', 'radio-option-description']"
             role="radio"
-                :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 active:bg-brand9': isSelected(option) }"
-            class="flex cursor-pointer rounded-lg border border-base3 bg-base3  px-3 py-2 items-center text-xs font-semibold flex-grow group">
+                :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }"
+            class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
             <!-- Checked Indicator -->
-                <span class={tightGap === true ? `hidden visibility-none aria-hidden="true"` : `inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2 :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }"`}">
+                <span class={tightGap === true ? `mr-3 hidden aria-hidden="true"` : `inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2 :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }"`}">
                     <span
                         class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2"
                         :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }"
@@ -74,7 +74,7 @@ interface Props {
                     ></span>
                 </span>
 
-            <span class={tightGap === true ? `ml-0 mr-auto` : `ml-2`}">
+            <span class={tightGap === true ? `ml-0 mr-auto inforRole-list` : `ml-2`}">
                 <!-- Primary Label -->
                 <p :id="$id('radio-option-label')" class="m-auto pb-0.5">{industry}</p>
 
