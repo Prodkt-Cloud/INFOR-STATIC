@@ -10,11 +10,9 @@ const divProps = {
 };
 ---
 
-<div class="infor-searchbar h-full" data-pagefind-ui="" data-bundle-path={bundlePath}></div>
+<div class="infor-searchbar h-full"  data-bundle-path={bundlePath}></div>
 <script>
-  import { PagefindUI } from "@pagefind/default-ui";
   window.addEventListener("DOMContentLoaded", () => {
-    const selector = "[data-pagefind-ui]";
     const el = document.querySelector(selector);
     const bundlePath = el?.getAttribute("data-bundle-path");
     new PagefindUI({

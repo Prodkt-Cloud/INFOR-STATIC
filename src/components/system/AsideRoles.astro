@@ -1,6 +1,15 @@
 ---
 import AsideRadioElements from '../organisms/AsideRadioElements.astro'
-const industry = ["A Auxiliary", "A Class Lineman", "A-Operator", "A/C Tech (Air Conditioning Technician)", "A/C Technician (Air Conditioning Technician)", "Aadc Plans Staff Officer", "Abalone Fisherman", "Abalone Processor", "Abatement Worker", "Abattoir Supervisor", "Able Bodied Seaman (AB Seaman)", "Able Bodied Tankerman (AB Tankerman)", "Able Bodied Watchman (AB Watchman)", "Able Seaman", "Abnormal Psychology Teacher", "Abrasive and Polished Products Supervisor", "Abrasive Band Winder", "Abrasive Coating Machine Operator", "Abrasive Coating Machine Set Up Operator", "Abrasive Grader", "Abrasive Grader Helper", "Abrasive Grinder", "Abrasive Mixer", "Abrasive Mixer Helper", "Abrasive Sawyer", "Abrasive Wheel Molder", "Abrasive Worker", "Abrasives Sales Representative", "Absorber Operator", "Absorption and Adsorption Engineer", "Absorption Operator", "Absorption Plant Operator", "Abstract Clerk", "Abstract Searcher", "Abstract Writer", "Abstracter", "AC/DC Motor Repair Person", "AC/DC Rewinder", "AC/DC Winder", "Academic Advisement Director", "Academic Adviser", "Academic Advising Director", "Academic Advisor", "Academic Affairs Dean", "Academic Affairs Director", "Academic Affairs Vice President", "Academic Computing Director", "Academic Coordinator", "Academic Counselor", "Academic Dean"];
-const tightGap = true;
+
+const response = await fetch("http://127.0.0.1:1337/api/learning-roles?populate=*");
+const data = await response.json();
+
 ---
-<AsideRadioElements {tightGap} {industry} />
+
+{
+    data.map((learnerRoles) => (
+      <>
+        <AsideRadioElements {learnerRoles.id.attributes.title} />
+      </>
+    ))
+  }

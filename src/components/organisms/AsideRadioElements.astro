@@ -1,13 +1,9 @@
 ---
-interface Props {
-    industry: string;
-    tightGap: boolean;
-  }
 
-  const { industry, tightGap } = Astro.props
+  import AsideRoles from './organisms/AsideRoles.astro';
+
 ---
 
-<!-- Radio Group -->
 <div
     x-data="{
         value: null,
@@ -43,18 +39,17 @@ interface Props {
     role="radiogroup"
     :aria-labelledby="$id('radio-group-label')"
     x-id="['radio-group-label']"
-    class="w-full"
->
+    class="w-full">
 
-    <!-- Radio Group Label -->
     <label :id="$id('radio-group-label')" role="none" class="hidden">Industries: <span x-text="value"></span></label>
-    <div class={tightGap === true ? `mt-2px grid grid-cols-2 gap-2px ` : `mt-4 flex flex-wrap justify-items-stretch w-auto gap-2`}">
+    <div class={`{tightGap}` === true ? `mt-2px grid grid-cols-2 gap-2px ` : `mt-4 flex flex-wrap justify-items-stretch w-auto gap-2`}">
 
-        {industry.map((industry) => 
+        {data.map((learnerRoles) => 
         <!-- Option -->
         <div
-            x-data={`{ option: '${industry}' }`}
+            x-data="option: {data.attributes.title};
             @click="select(option)"
+            role="radio"
             @keydown.enter.stop.prevent="select(option)"
             @keydown.space.stop.prevent="select(option)"
             :aria-checked="isSelected(option)"
@@ -62,26 +57,23 @@ interface Props {
             :aria-labelledby="$id('radio-option-label')"
             :aria-describedby="$id('radio-option-description')"
             x-id="['radio-option-label', 'radio-option-description']"
-            role="radio"
-                :class="{ 'bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9': isSelected(option) }"
+            :class="bg-brand9 hover:bg-brand9 border-brand9 text-base1 focus:bg-brand9 focus:text-brand1 active:text-brand1 active:bg-brand9 : isSelected(option)"
             class="flex cursor-pointer rounded-lg border border-base3 bg-base6 px-3 py-2 items-center text-xs font-semibold flex-grow group">
-            <!-- Checked Indicator -->
-                <span class={tightGap === true ? `mr-3 hidden aria-hidden="true"` : `inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2 :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }"`}">
+
+                <span class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2" :class="bg-brand9 hover:focus:bg-brand9:isSelected(option)">
                     <span
                         class="inline-flex h-3 w-3 shrink-0 items-center justify-center rounded-full border-3 border-base1 group-hover:border-base1 bg-base1 group-hover:bg-brand9 ring-1 ring-base2 group-hover:ring-base2"
-                        :class="{ 'bg-brand9 hover:focus:bg-brand9': isSelected(option) }"
+                        :class="bg-brand9 hover:focus:bg-brand9:isSelected(option)"
                         aria-hidden="true"
                     ></span>
                 </span>
 
-            <span class={tightGap === true ? `ml-0 mr-auto inforRole-list` : `ml-2`}">
-                <!-- Primary Label -->
-                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">{industry}</p>
+            <span class={`${tightGap === true ? `ml-0 mr-auto inforRole-list` : `ml-2`}`}>
+                <p :id="$id('radio-option-label')" class="m-auto pb-0.5">
+                    
 
-                <!-- Secondary Information -->
-                <span :id="$id('radio-option-description')" class="mt-2 text-sm hidden">
-                    {industry}
-                </span>
+
+                </p>
             </span>
         </div>
         )}
