@@ -1,0 +1,21 @@
+---
+import Tabs from '../../components/organisms/Tabs.astro';
+import Tabs2 from '../../components/organisms/Tabs2.astro';
+import Layout from '../../layouts/Layout.astro';
+    /* PRODKT API */
+    const response = await fetch('http://127.0.0.1:1337/api/industries?populate=*');
+    const { data } = await response.json();
+    console.log(data);
+    /* END PRODKT API */
+---
+
+<Layout title="test">
+{
+    data.map((industry) => (
+      <>
+      <a href={`${industry.attributes.slug}`}> {industry.attributes.title} </a>
+      </>
+    ))
+  }
+</Layout>
+

@@ -1,0 +1,25 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import IndustryTags from '../industries/[...tag].astro';
+export async function getStaticPaths() {
+  const response = await fetch('http://127.0.0.1:1337/api/learning-lifecycles?populate=*');
+    const { data } = await response.json();
+
+    if (data && Array.isArray(data)) {
+    return data.map((learningLifecycle) => {
+      return {
+        params: { slug: learningLifecycle.attributes.slug },
+        props: { learningLifecycle },
+      };
+    });
+  } else {
+    console.error('No data found');
+    return [];
+  }
+}
+
+const { learningLifecycle } = Astro.props;
+---
+<Layout title="test">
+<a href={`/${learningLifecycle.attributes.slug}`}> {learningLifecycle.attributes.title} </a>
+</Layout>

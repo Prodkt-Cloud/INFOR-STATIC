@@ -1,0 +1,51 @@
+---
+
+import Tabs2 from '../../components/organisms/Tabs2.astro';
+import Layout from '../../layouts/Layout.astro';
+    /* PRODKT API */
+    const response = await fetch('http://127.0.0.1:1337/api/learning-lifecycles?populate=*');
+    const { data } = await response.json();
+    console.log(data);
+    /* END PRODKT API */
+---
+
+
+
+<Layout title="index">
+  {
+      data.map((learningLifecycle) => (
+        <>
+        <a href={`/${learningLifecycle.attributes.slug}`}> {learningLifecycle.attributes.title} </a>
+        </>
+      ))
+    }
+  <section class="">
+    <div class="">
+      <!-- <h2 class="mb-5 text-6xl md:text-8xl xl:text-10xl text-center font-bold font-heading font-heading tracking-px-n leading-none">Learning Lifecycle</h2> -->
+      <!-- <p class="mb-16 text-lg text-base9 text-center font-medium leading-normal md:max-w-lg mx-auto">Lorem ipsum dolor sit amet, to the con adipiscing. Volutpat tempor to the condimentum vitae vel purus.</p> -->
+      <Tabs2 />
+      <div class="md:max-w-6xl mx-auto">
+        <div class="grid grid-cols-3 gap-6 mb-12">
+  
+          {
+            data.map((cycle) => (
+              <>
+                <div class="infor-lifecycle-card relative overflow-hidden w-full flex flex-col p-8 items-start gap-8 space-between bg-brand12 text-base3 rounded-xl hover:shadow-blue7 transition-shadow hover:transition-shadow ">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" width="11" height="14" fill="currentColor" viewBox="0 0 11 14">
+    <path d="M2.38 4.22c.349 0 .665-.083.95-.251.285-.172.512-.4.68-.686.172-.289.258-.607.258-.955s-.086-.664-.258-.95A1.89 1.89 0 0 0 3.33.7a1.803 1.803 0 0 0-.95-.258A1.8 1.8 0 0 0 1.432.7a1.937 1.937 0 0 0-.686.68 1.835 1.835 0 0 0-.252.95c0 .347.084.665.252.954.172.285.4.514.686.686.285.168.601.252.949.252Zm-.474.218c0 .585.18 1.082.54 1.488.359.402.888.699 1.587.89l2.947.832c.973.278 1.46.77 1.46 1.477v.41h.943v-.41c0-.582-.18-1.074-.54-1.477-.355-.406-.882-.705-1.581-.896L4.314 5.92c-.976-.274-1.464-.768-1.464-1.482v-.405h-.944v.404Zm7.008 4.91a1.84 1.84 0 0 0-.955.257 1.922 1.922 0 0 0-.686.686 1.836 1.836 0 0 0-.252.95c0 .347.084.663.252.949.172.285.4.511.686.68.289.167.607.251.955.251s.664-.084.95-.252a1.89 1.89 0 0 0 .679-.68 1.8 1.8 0 0 0 .258-.949c0-.347-.086-.664-.258-.949a1.876 1.876 0 0 0-.68-.686 1.803 1.803 0 0 0-.949-.257Zm0 .92c.27 0 .498.093.686.28a.94.94 0 0 1 .28.692c0 .27-.093.496-.28.68a.933.933 0 0 1-.686.281.94.94 0 0 1-.691-.281.914.914 0 0 1-.282-.68.94.94 0 0 1 .282-.691.94.94 0 0 1 .691-.281Z"/>
+  </svg>
+  <div>
+  <p class="m-0 font-semibold text-xs mb-3">Lifecycle level:</p>
+                  <h2 class="font-black text-2xl m-0 uppercase">{cycle.attributes.title}</h2>
+  <p class="m-0 font-semibold text-xs">X Learning Paths</p>
+                </div>
+                  <!-- <p class="m-0">{cycle.attributes.description}</p> -->
+                  </div>
+              </>
+            ))
+          }
+  
+      </div>
+    </div>
+  </section>
+  </Layout>

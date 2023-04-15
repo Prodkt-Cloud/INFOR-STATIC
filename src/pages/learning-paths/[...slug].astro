@@ -1,0 +1,265 @@
+---
+import Tabs2 from '@components/organisms/Tabs2.astro';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const response = await fetch('http://127.0.0.1:1337/api/learning-paths?populate=*');
+    const { data } = await response.json();
+
+    if (data && Array.isArray(data)) {
+    return data.map((learningPath) => {
+      return {
+        params: { slug: learningPath.attributes.slug },
+        props: { learningPath },
+      };
+    });
+  } else {
+    console.error('No data found');
+    return [];
+  }
+}
+
+const { learningPath } = Astro.props;
+---
+<Layout title="Learning Paths">
+<!-- <a href={`/learning-paths/${learningPath.attributes.slug}`}> {learningPath.attributes.title} </a> -->
+<div class="p-12 mx-auto w-full border-b border-base6"> <Tabs2 /> </div>
+
+<section class="relative">
+  <div class="absolute top-0 left-0 h-px max-w-3xl bg-opacity-10"></div>
+  <div class="absolute bottom-0 left-0 mb-0 h-px w-full bg-base6 bg-opacity-20"></div>
+  <div class="container px-4 mx-auto">
+    <div class="flex flex-wrap -mx-4">
+      <div class="w-full lg:w-1/2 xl:w-2/5 lg:mb-0 lg:border-r border-base6 border-opacity-10">
+        <div class="lg:max-w-lg pt-24 lg:pb-40 text-left px-12">
+          <p class="text-regular mb-14">Learning Path</p>
+          <h1 class="text-6xl sm:text-5xl font-heading font-semibold mb-16">{learningPath.attributes.title}</h1>
+          <p class="text-2xl mb-14">Get started today!</p>
+          <a class="group relative inline-block h-16 w-80 bg-base3 text-base4 rounded-lg" href={`/learning-paths/${learningPath.attributes.url}`}>
+            <div class="absolute top-0 left-0 transform -translate-y-1 -translate-x-1 w-full h-full group-hover:translate-y-0 group-hover:translate-x-0 transition duration-300">
+              <div class="flex inline-flex w-full items-center px-4 py-4 justify-center bg-brand11 rounded-lg">
+                <span class="text-base font-semibold uppercase">Register for this Learning Path</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="w-full lg:w-1/2 xl:w-3/5 px-4 xl:pl-24">
+        <div class="lg:max-w-xl">
+          <div class="flex flex-wrap -mx-4 lg:pt-44 pb-24 xl:pb-32">
+            <div class="w-full sm:w-1/2 px-4 mb-32">
+              <div class="max-w-2xs mx-auto xs:px-10">
+                <img class="mb-10" src="/icons/dataflow-03.svg" alt="">
+                <h4 class="text-3xl font-medium mb-2">Tovuti Certification</h4>
+                <p>As always. Eloquent UI, with big hints of Learning & Growth.</p>
+              </div>
+            </div>
+            <div class="w-full sm:w-1/2 px-4 mb-32">
+              <div class="max-w-2xs mx-auto xs:px-10">
+                <img class="mb-10" src="/icons/bar-chart-01.svg" alt="">
+                <h4 class="text-3xl font-medium mb-2">Upskilling teams at Infor 2023</h4>
+                <p>Oh, irreplaceable. Infor unlocking growth potential in students across the globe.</p>
+              </div>
+            </div>
+            <div class="w-full px-4 mb-32 sm:mb-0">
+              <div class="max-w-2xs mx-auto xs:px-10">
+                <img class="mb-10" src="/icons/lightbulb-05.svg" alt="">
+                <h4 class="text-3xl font-medium mb-2">WeDefine & REfine</h4>
+                <p>Once you've identified your next move, it's time to prepare. This may involve conducting market research or developing a strategic plan. The key is to make sure that you're fully prepared before moving forward.</p>
+              </div>
+            </div>
+            <div class="w-full mt-32 px-4 text-center">
+              <a class="group inline-flex items-center" href="#">
+                <div class="relative flex items-center justify-center w-20 h-20 mr-6 rounded-full">
+                  <span class="text-gray-300 group-hover:text-blueGray-900 absolute top-0 left-0 w-full h-full transform group-hover:rotate-180 transition duration-500">
+                    <svg width="81" height="81" viewbox="0 0 82 82" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="80" height="80" rx="39" stroke="currentColor" stroke-width="2" stroke-dasharray="2 13"></rect></svg>
+                  </span>
+                  <span class="flex items-center text-2xl font-semibold">
+                    <span class="text-xl">+</span>
+                    <span "text-xl">8</span>
+                  </span>
+                </div>
+                <span class="text-lg font-bold text-brand9">Includes 8 Courses!</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section>
+  <div class="py-20 bg-brand8 overflow-hidden radius-for-skewed">
+    <div class="container mx-auto px-4">
+      <div class="mb-16 max-w-md text-center mx-auto">
+        <span class="text-purple-400 font-bold">Dolor sit amet consectutar</span>
+        <h2 class="mb-2 text-4xl lg:text-5xl font-bold font-heading text-white">Learn &amp; Upskill with Infor</h2>
+      </div>
+      <div class="relative flex flex-wrap -mx-4 z-0">
+        <img class="h-128 hidden xl:block absolute top-0 right-0 -mt-4 -mr-16" style="z-index: -1;" src="/line-light-gray.svg" alt="">
+        <div class="mb-10 lg:mb-32 w-full md:w-1/2 lg:w-1/3 px-4">
+          <div class="max-w-xs">
+            <span class="mb-4 lg:mb-10 flex w-16 h-16 items-center justify-center bg-yellow-400 text-white rounded-full font-bold text-2xl">1</span>
+            <h3 class="mb-4 text-2xl font-bold font-heading text-white">Lorem ipsum dolor sit amet consectutar</h3>
+            <p class="text-gray-50 leading-loose">Fusce quam tellus, placerat eu metus ut, viverra aliquet purus. Suspendisse potenti. Nulla non nibh feugiat.</p>
+          </div>
+        </div>
+        <div class="mb-10 lg:mb-32 w-full md:w-1/2 lg:w-1/3 px-4">
+          <div class="max-w-xs">
+            <span class="mb-4 lg:mb-10 flex w-16 h-16 items-center justify-center bg-pink-400 text-white rounded-full font-bold text-2xl">2</span>
+            <h3 class="mb-4 text-2xl font-bold font-heading text-white">Lorem ipsum dolor sit amet consectutar</h3>
+            <p class="text-gray-50 leading-loose">Fusce quam tellus, placerat eu metus ut, viverra aliquet purus. Suspendisse potenti. Nulla non nibh feugiat.</p>
+          </div>
+        </div>
+        <div class="mb-10 lg:mb-32 w-full md:w-1/2 lg:w-1/3 px-4">
+          <div class="max-w-xs">
+            <span class="mb-4 lg:mb-10 flex w-16 h-16 items-center justify-center bg-purple-400 text-white rounded-full font-bold text-2xl">3</span>
+            <h3 class="mb-4 text-2xl font-bold font-heading text-white">Lorem ipsum dolor sit amet consectutar</h3>
+            <p class="text-gray-50 leading-loose">Fusce quam tellus, placerat eu metus ut, viverra aliquet purus. Suspendisse potenti. Nulla non nibh feugiat.</p>
+          </div>
+        </div>
+        <div class="mb-10 w-full md:w-1/2 lg:w-1/3 px-4 order-last lg:order-1">
+          <div class="max-w-xs">
+            <span class="mb-4 lg:mb-10 flex w-16 h-16 items-center justify-center bg-green-400 text-white rounded-full font-bold text-2xl">6</span>
+            <h3 class="mb-4 text-2xl font-bold font-heading text-white">Lorem ipsum dolor sit amet consectutar</h3>
+            <p class="text-gray-50 leading-loose">Fusce quam tellus, placerat eu metus ut, viverra aliquet purus. Suspendisse potenti. Nulla non nibh feugiat.</p>
+          </div>
+        </div>
+        <div class="mb-10 md:mb-0 w-full md:w-1/2 lg:w-1/3 px-4 order-1 lg:order-0">
+          <div class="max-w-xs">
+            <span class="mb-4 lg:mb-10 flex w-16 h-16 items-center justify-center bg-blue-400 text-white rounded-full font-bold text-2xl">5</span>
+            <h3 class="mb-4 text-2xl font-bold font-heading text-white">Lorem ipsum dolor sit amet consectutar</h3>
+            <p class="text-gray-50 leading-loose">Fusce quam tellus, placerat eu metus ut, viverra aliquet purus. Suspendisse potenti. Nulla non nibh feugiat.</p>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 lg:w-1/3 px-4 lg:order-last">
+          <div class="max-w-xs">
+            <span class="mb-4 lg:mb-10 flex w-16 h-16 items-center justify-center bg-yellow-400 text-white rounded-full font-bold text-2xl">4</span>
+            <h3 class="mb-4 text-2xl font-bold font-heading text-white">Lorem ipsum dolor sit amet consectutar</h3>
+            <p class="text-gray-50 leading-loose">Fusce quam tellus, placerat eu metus ut, viverra aliquet purus. Suspendisse potenti. Nulla non nibh feugiat.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="relative pt-28 pb-36 bg-white overflow-hidden">
+  <div class="relative z-10 container px-4 mx-auto">
+    <h2 class="mb-6 text-6xl md:text-8xl xl:text-10xl font-bold font-heading tracking-px-n leading-none md:max-w-xl mx-auto">Select, Start, Grow</h2>
+    <p class="mb-20 text-lg text-gray-900 text-center font-medium leading-normal md:max-w-lg mx-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elemen tum.</p>
+    <div class="md:max-w-4xl mx-auto">
+      <div class="flex flex-wrap -m-5">
+        <div class="w-full md:w-1/2 p-5">
+          <div class="bg-white bg-opacity-90 border border-blueGray-100 rounded-4xl shadow-9xl" style="backdrop-filter: blur(46px);">
+            <div class="border-b border-blueGray-100">
+              <div class="py-7 px-9">
+                <h3 class="mb-3 text-xl text-gray-900 font-bold leading-snug">Big Bets on Big Futures
+                </h3>
+                <p class="text-gray-500 font-medium leading-relaxed">Lorem ipsum dolor sit amet, consect etur adipiscing maror.</p>
+              </div>
+            </div>
+            <div class="pt-8 bg-brand9 text-base3 pb-9 px-9">
+              <p class="mb-6 text-gray-600 font-medium leading-relaxed">Features included:</p>
+              <ul class="mb-11">
+                <li class="mb-4 flex items-center">
+                  <svg class="mr-2" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.5 10L9.16667 11.6667L12.5 8.33333M17.5 10C17.5 14.1421 14.1421 17.5 10 17.5C5.85786 17.5 2.5 14.1421 2.5 10C2.5 5.85786 5.85786 2.5 10 2.5C14.1421 2.5 17.5 5.85786 17.5 10Z" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                  <p class="font-semibold leading-normal">Big Bets on Big Futures</p>
+                </li>
+                <li class="mb-4 flex items-center">
+                  <svg class="mr-2" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.5 10L9.16667 11.6667L12.5 8.33333M17.5 10C17.5 14.1421 14.1421 17.5 10 17.5C5.85786 17.5 2.5 14.1421 2.5 10C2.5 5.85786 5.85786 2.5 10 2.5C14.1421 2.5 17.5 5.85786 17.5 10Z" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                  <p class="font-semibold leading-normal">Big Bets on Big Futures</p>
+                </li>
+                <li class="mb-4 flex items-center">
+                  <svg class="mr-2" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.5 10L9.16667 11.6667L12.5 8.33333M17.5 10C17.5 14.1421 14.1421 17.5 10 17.5C5.85786 17.5 2.5 14.1421 2.5 10C2.5 5.85786 5.85786 2.5 10 2.5C14.1421 2.5 17.5 5.85786 17.5 10Z" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                  <p class="font-semibold leading-normal">Tovuti Funk</p>
+                </li>
+                <li class="mb-4 flex items-center">
+                  <svg class="mr-2" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.5 10L9.16667 11.6667L12.5 8.33333M17.5 10C17.5 14.1421 14.1421 17.5 10 17.5C5.85786 17.5 2.5 14.1421 2.5 10C2.5 5.85786 5.85786 2.5 10 2.5C14.1421 2.5 17.5 5.85786 17.5 10Z" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                  <p class="font-semibold leading-normal">Tovuti Funk</p>
+                </li>
+                <li class="flex items-center">
+                  <svg class="mr-2" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.5 10L9.16667 11.6667L12.5 8.33333M17.5 10C17.5 14.1421 14.1421 17.5 10 17.5C5.85786 17.5 2.5 14.1421 2.5 10C2.5 5.85786 5.85786 2.5 10 2.5C14.1421 2.5 17.5 5.85786 17.5 10Z" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                  <p class="font-semibold leading-normal">Tovuti Funk</p>
+                </li>
+              </ul>
+              <p class="mb-6 text-xl text-gray-500 font-semibold leading-normal">
+                <span class="text-gray-900">Tovuti Funk</span>
+              </p>
+              <div class="md:inline-block">
+                <button class="py-4 px-10 w-full text-white font-semibold rounded-xl focus:ring focus:ring-indigo-300 bg-indigo-600 hover:bg-indigo-700 transition ease-in-out duration-200" type="button">Big Bets on Big Futures</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 p-5">
+          <div class="bg-white bg-opacity-90 border border-blueGray-100 rounded-4xl shadow-9xl" style="backdrop-filter: blur(46px);">
+            <div class="border-b border-blueGray-100">
+              <div class="py-7 px-9">
+                <h3 class="mb-3 text-xl text-gray-900 font-bold leading-snug">C. Strategic planning
+                </h3>
+                <p class="text-gray-500 font-medium leading-relaxed">Lorem ipsum dolor sit amet, consect etur adipiscing maror.</p>
+              </div>
+            </div>
+            <div class="pt-8 pb-9 px-9">
+              <p class="mb-6 text-gray-600 font-medium leading-relaxed">Ciriculum covered:</p>
+              <ul class="mb-11">
+                <li class="mb-4 flex items-center">
+                  <svg class="mr-2" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.5 10L9.16667 11.6667L12.5 8.33333M17.5 10C17.5 14.1421 14.1421 17.5 10 17.5C5.85786 17.5 2.5 14.1421 2.5 10C2.5 5.85786 5.85786 2.5 10 2.5C14.1421 2.5 17.5 5.85786 17.5 10Z" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                  <p class="font-semibold leading-normal">Tovuti Funk</p>
+                </li>
+                <li class="mb-4 flex items-center">
+                  <svg class="mr-2" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.5 10L9.16667 11.6667L12.5 8.33333M17.5 10C17.5 14.1421 14.1421 17.5 10 17.5C5.85786 17.5 2.5 14.1421 2.5 10C2.5 5.85786 5.85786 2.5 10 2.5C14.1421 2.5 17.5 5.85786 17.5 10Z" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                  <p class="font-semibold leading-normal">Tovuti Funk</p>
+                </li>
+                <li class="mb-4 flex items-center">
+                  <svg class="mr-2" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.5 10L9.16667 11.6667L12.5 8.33333M17.5 10C17.5 14.1421 14.1421 17.5 10 17.5C5.85786 17.5 2.5 14.1421 2.5 10C2.5 5.85786 5.85786 2.5 10 2.5C14.1421 2.5 17.5 5.85786 17.5 10Z" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                  <p class="font-semibold leading-normal">Tovuti Funk</p>
+                </li>
+                <li class="mb-4 flex items-center">
+                  <svg class="mr-2" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.5 10L9.16667 11.6667L12.5 8.33333M17.5 10C17.5 14.1421 14.1421 17.5 10 17.5C5.85786 17.5 2.5 14.1421 2.5 10C2.5 5.85786 5.85786 2.5 10 2.5C14.1421 2.5 17.5 5.85786 17.5 10Z" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                  <p class="font-semibold leading-normal">Tovuti Funk</p>
+                </li>
+                <li class="flex items-center">
+                  <svg class="mr-2" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.5 10L9.16667 11.6667L12.5 8.33333M17.5 10C17.5 14.1421 14.1421 17.5 10 17.5C5.85786 17.5 2.5 14.1421 2.5 10C2.5 5.85786 5.85786 2.5 10 2.5C14.1421 2.5 17.5 5.85786 17.5 10Z" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                  <p class="font-semibold leading-normal">Tovuti Funk</p>
+                </li>
+              </ul>
+              <p class="mb-6 text-xl text-gray-500 font-semibold leading-normal">
+                <span>Starting from</span>
+                <span class="text-gray-900">Tovuti Funk</span>
+              </p>
+              <div class="md:inline-block">
+                <button class="py-4 px-10 w-full text-white font-semibold rounded-xl focus:ring focus:ring-indigo-300 bg-indigo-600 hover:bg-indigo-700 transition ease-in-out duration-200" type="button">Register for this course</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="absolute bottom-0 left-0 w-full py-64 bg-indigo-600"></div>
+</section>
+</Layout>

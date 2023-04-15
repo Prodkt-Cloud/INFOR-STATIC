@@ -1,0 +1,31 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const allpaths = await fetch('http://127.0.0.1:1337/api/learning-paths?populate=*');
+  const { data } = await allpaths.json();
+  
+  const uniqueTags = [...new Set(data.flatMap((path) => path.attributes.tags))];
+
+  return uniqueTags.map((tag) => {
+    const filteredPosts = allPosts.filter((post) => post.frontmatter.tags.includes(tag));
+    return {
+      params: { tag },
+      props: { posts: filteredPosts },
+    };
+  });
+const { tag } = Astro.params;
+const { paths } = Astro.props;
+
+---
+
+<Layout title="test">
+    {
+      paths && paths.map((path) => (
+        <>
+          <h2>{path.attributes.title}</h2>
+          <p>{path.attributes.slug}</p>
+        </>
+      ))
+    }
+</Layout>

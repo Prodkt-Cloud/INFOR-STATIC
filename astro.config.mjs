@@ -9,6 +9,9 @@ import alpinejs from "@astrojs/alpinejs";
 
 // https://astro.build/config
 export default defineConfig({
+  experimental: {
+   assets: true
+  },
   build: {
     format: "file",
   },

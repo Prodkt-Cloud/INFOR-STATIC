@@ -1,0 +1,28 @@
+---
+
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const response = await fetch('http://127.0.0.1:1337/api/industries?populate=*');
+    const { data } = await response.json();
+    // const tags = [...new Set(data.map((industryTag) => industryTag.attributes.title).flat())];
+
+    if (data && Array.isArray(data)) {
+    return data.map((industryTag) => {
+      return {
+        params: { slug: industryTag.attributes.slug },
+        props: { industryTag },
+      };
+    });
+  } else {
+    console.error('No data found');
+    return [];
+  }
+}
+
+const { industryTag } = Astro.props;
+
+---
+<Layout title="test">
+<a href={`/${industryTag.attributes.slug}`}> {industryTag.attributes.title} </a>
+</Layout>

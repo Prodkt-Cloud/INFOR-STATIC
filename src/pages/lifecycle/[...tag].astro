@@ -1,0 +1,29 @@
+---
+
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const response = await fetch('http://127.0.0.1:1337/api/learning-lifecycle?populate=*');
+    const { data } = await response.json();
+    // const tags = [...new Set(data.map((learningLifecycleTag) => learningLifecycleTag.attributes.title).flat())];
+
+    if (data && Array.isArray(data)) {
+    return data.map((learningLifecycleTag) => {
+      return {
+        params: { slug: learningLifecycleTag.attributes.slug },
+        props: { learningLifecycleTag },
+      };
+    });
+  } else {
+    console.error('No data found');
+    return [];
+  }
+}
+
+const { learningLifecycleTag } = Astro.props;
+
+---
+
+<Layout title="test">
+<a href={`/tag/${learningLifecycleTag.attributes.slug}`}> {learningLifecycleTag.attributes.title} </a>
+</Layout>

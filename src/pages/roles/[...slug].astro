@@ -1,0 +1,17 @@
+---
+import Layout from '../../layouts/Layout.astro';
+export async function getStaticPaths() {
+  const response = await fetch('http://127.0.0.1:1337/api/learning-roles?populate=*');
+    const { data } = await response.json();
+
+    return data.map((learningRole) => {
+      return {
+        params: { slug: learningRole.attributes.slug },
+        props: { learningRole },
+      };
+    });
+}
+
+---
+<Layout title="test">
+</Layout>

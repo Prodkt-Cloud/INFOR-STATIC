@@ -14,7 +14,8 @@
     "@astrojs/mdx": "^0.18.4",
     "@astrojs/rss": "^2.3.2",
     "astro": "^2.3.0",
-    "astro-pagefind": "^1.1.0"
+    "astro-pagefind": "^1.1.0",
+    "vercel": "^28.18.5"
   },
   "devDependencies": {
     "@astrojs/image": "^0.16.6",

@@ -1,11 +1,16 @@
 ---
+
+import Layout from '../../layouts/Layout.astro';
+
 import Layout from '../layouts/Layout.astro';
 import LandingPage from '../components/sections/LandingPage.astro';
+import FilterButton from '@components/atoms/FilterButton.astro';
 
 
 
 ---
 
 <Layout title="test">
+    <FilterButton text="test" />
     <LandingPage />
 </Layout>

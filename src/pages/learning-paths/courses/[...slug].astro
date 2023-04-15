@@ -1,0 +1,25 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const response = await fetch('http://127.0.0.1:1337/api/courses?populate=*');
+    const { data } = await response.json();
+
+    if (data && Array.isArray(data)) {
+    return data.map((courses) => {
+      return {
+        params: { slug: courses.attributes.slug },
+        props: { courses },
+      };
+    });
+  } else {
+    console.error('No data found');
+    return [];
+  }
+}
+
+const { courses } = Astro.props;
+---
+<Layout title="Learning Paths">
+<a href={`/courses/${courses.attributes.slug}`}> {courses.attributes.title} </a>
+</Layout>
