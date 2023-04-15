@@ -1,1 +1,0 @@
-import"./Search.astro_astro_type_script_index_0_lang.4ca00e25.js";document.addEventListener("alpine:init",()=>{Alpine.bind("{`${text}`}",()=>({type:"button","@click"(){this.doSomething()},":disabled"(){return this.shouldDisable}}))});
