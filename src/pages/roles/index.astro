@@ -1,0 +1,19 @@
+---
+
+import Layout from '../../layouts/Layout.astro';
+    /* PRODKT API */
+    const response = await fetch('http://127.0.0.1:1337/api/learning-roles?populate=*');
+    const { data } = await response.json();
+    console.log(data);
+    /* END PRODKT API */
+---
+
+<Layout title="test">
+{
+    data.map((learningRole) => (
+      <>
+      <a href={`/${learningRole.attributes.slug}`}> {learningRole.attributes.title} </a>
+      </>
+    ))
+  }
+</Layout>

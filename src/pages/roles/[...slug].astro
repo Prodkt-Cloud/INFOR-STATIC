@@ -1,0 +1,25 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import IndustryTags from '../industries/[...tag].astro';
+export async function getStaticPaths() {
+  const response = await fetch('http://127.0.0.1:1337/api/learning-roles?populate=*');
+    const { data } = await response.json();
+
+    if (data && Array.isArray(data)) {
+    return data.map((learningRole) => {
+      return {
+        params: { slug: learningRole.attributes.slug },
+        props: { learningRole },
+      };
+    });
+  } else {
+    console.error('No data found');
+    return [];
+  }
+}
+
+const { learningRole } = Astro.props;
+---
+<Layout title="test">
+<a href={`/${learningRole.attributes.slug}/roles`}> {learningRole.attributes.title} </a>
+</Layout>

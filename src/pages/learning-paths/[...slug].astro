@@ -1,4 +1,6 @@
 ---
+import Layout from '../../layouts/Layout.astro';
+
 export async function getStaticPaths() {
   const response = await fetch('http://127.0.0.1:1337/api/learning-paths?populate=*');
     const { data } = await response.json();
@@ -18,5 +20,70 @@ export async function getStaticPaths() {
 
 const { learningPath } = Astro.props;
 ---
+<Layout title="Learning Paths">
+<!-- <a href={`/learning-paths/${learningPath.attributes.slug}`}> {learningPath.attributes.title} </a> -->
 
-<a href="{`http://127.0.0.1:1337/${learningPath.attributes.slug}`}"> {learningPath.attributes.title} </a>
+
+<section class="relative bg-brand1 rounded-3xl">
+  <div class="absolute top-0 left-0 h-px w-full bg-opacity-10"></div>
+  <div class="absolute bottom-0 left-0 mb-14 h-px w-full bg-base6 bg-opacity-20"></div>
+  <div class="container px-4 mx-auto">
+    <div class="flex flex-wrap -mx-4">
+      <div class="w-full lg:w-1/2 xl:w-2/5 lg:mb-0 lg:border-r border-base6 border-opacity-10">
+        <div class="lg:max-w-lg pt-24 md:pt-32 lg:pb-40 text-center px-24 trai-----------------------o">
+          <h1 class="text-6xl sm:text-5xl font-heading font-semibold mb-16">{learningPath.attributes.title}</h1>
+          <p class="text-2xl mb-14">Get started today!</p>
+          <a class="group relative inline-block h-16 w-80 bg-base3 text-base4 rounded-lg" href={`/learning-paths/${learningPath.attributes.url}`}>
+            <div class="absolute top-0 left-0 transform -translate-y-1 -translate-x-1 w-full h-full group-hover:translate-y-0 group-hover:translate-x-0 transition duration-300">
+              <div class="flex inline-flex w-full items-center px-4 py-4 justify-center bg-brand11 rounded-lg">
+                <span class="text-base font-semibold uppercase">Register for this Learning Path</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="w-full lg:w-1/2 xl:w-3/5 px-4 xl:pl-24">
+        <div class="lg:max-w-xl">
+          <div class="flex flex-wrap -mx-4 lg:pt-44 pb-24 xl:pb-32">
+            <div class="w-full sm:w-1/2 px-4 mb-32">
+              <div class="max-w-2xs mx-auto xs:px-10">
+                <img class="mb-10" src="suncealand-assets/logos/slack-logo.svg" alt="">
+                <h4 class="text-3xl font-medium mb-2">Tovuti Certification</h4>
+                <p>As always. Eloquent UI, with big hints of Learning & Growth.</p>
+              </div>
+            </div>
+            <div class="w-full sm:w-1/2 px-4 mb-32">
+              <div class="max-w-2xs mx-auto xs:px-10">
+                <img class="mb-10" src="suncealand-assets/logos/miro-logo-icon.svg" alt="">
+                <h4 class="text-3xl font-medium mb-2">Upskilling teams at Infor 2023</h4>
+                <p>Oh, irreplaceable. Infor unlocking growth potential in students across the globe.</p>
+              </div>
+            </div>
+            <div class="w-full sm:w-1/2 px-4 mb-32 sm:mb-0">
+              <div class="max-w-2xs mx-auto xs:px-10">
+                <img class="mb-10" src="suncealand-assets/logos/we-icon-logo-dark.svg" alt="">
+                <h4 class="text-3xl font-medium mb-2">WeTransfer</h4>
+                <p>As always. Slack is nunc iaculis quis risus at tristique</p>
+              </div>
+            </div>
+            <div class="w-full sm:w-1/2 px-4 text-center">
+              <a class="group inline-flex items-center" href="#">
+                <div class="relative flex items-center justify-center w-20 h-20 mr-6 rounded-full">
+                  <span class="text-gray-300 group-hover:text-blueGray-900 absolute top-0 left-0 w-full h-full transform group-hover:rotate-180 transition duration-500">
+                    <svg width="81" height="81" viewbox="0 0 82 82" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="80" height="80" rx="39" stroke="currentColor" stroke-width="2" stroke-dasharray="2 13"></rect></svg>
+                  </span>
+                  <span class="flex items-center text-2xl font-semibold">
+                    <span class="text-xl">+</span>
+                    <span>8</span>
+                  </span>
+                </div>
+                <span class="text-lg font-medium">More</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</Layout>
