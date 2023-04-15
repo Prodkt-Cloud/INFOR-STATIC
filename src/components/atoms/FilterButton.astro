@@ -1,0 +1,22 @@
+---
+
+const { text } = Astro.props;
+
+---
+<button data-pagefind-filter={text} x-bind="filterButton">{text}</button>
+ 
+<script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.bind('{`${text}`}', () => ({
+            type: 'button',
+ 
+            '@click'() {
+                this.doSomething()
+            },
+ 
+            ':disabled'() {
+                return this.shouldDisable
+            },
+        }))
+    })
+</script>

@@ -1,0 +1,15 @@
+---
+    /* PRODKT API */
+    const response = await fetch('http://127.0.0.1:1337/api/learning-paths?populate=*');
+    const { data } = await response.json();
+    console.log(data);
+    /* END PRODKT API */
+---
+
+{
+    data.map((learningPath) => (
+      <>
+      <a href={`/learning-path/${learningPath.attributes.slug}`}> {learningPath.attributes.title} </a>
+      </>
+    ))
+  }
