@@ -21,5 +21,16 @@ export async function getStaticPaths() {
 const { learningRole } = Astro.props;
 ---
 <Layout title="test">
-<a href={`/${learningRole.attributes.slug}/roles`}> {learningRole.attributes.title} </a>
+
+
+
+<ul class="grid grid-cols-4">
+  {
+    data.map((role) => (
+  <li><a href={`/${learningRole.attributes.slug}`}>{`${learningRole.attributes.title}`}</a></li>
+  ))
+  }
+
+</ul>
+<!-- <a href={`/${learningRole.attributes.slug}/roles`}> {learningRole.attributes.title} </a> -->
 </Layout>
