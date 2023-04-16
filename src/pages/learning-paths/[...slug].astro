@@ -1,6 +1,10 @@
 ---
 import Tabs2 from '@components/organisms/Tabs2.astro';
 import Layout from '../../layouts/Layout.astro';
+import Card1 from '../../components/course/Card1.astro';
+
+const response = await fetch('http://127.0.0.1:1337/api/learning-paths?populate=*');
+    const { data } = await response.json();
 
 export async function getStaticPaths() {
   const response = await fetch('http://127.0.0.1:1337/api/learning-paths?populate=*');
@@ -18,8 +22,8 @@ export async function getStaticPaths() {
     return [];
   }
 }
-
-const { learningPath } = Astro.props;
+const { learningPath, title, url } = Astro.props;
+console.log(learningPath);
 ---
 <Layout title="Learning Paths">
 <!-- <a href={`/learning-paths/${learningPath.attributes.slug}`}> {learningPath.attributes.title} </a> -->
@@ -30,21 +34,15 @@ const { learningPath } = Astro.props;
   <div class="absolute bottom-0 left-0 mb-0 h-px w-full bg-base6 bg-opacity-20"></div>
   <div class="container px-4 mx-auto">
     <div class="flex flex-wrap -mx-4">
-      <div class="w-full lg:w-1/2 xl:w-2/5 lg:mb-0 lg:border-r border-base6 border-opacity-10">
-        <div class="lg:max-w-lg pt-24 lg:pb-40 text-left px-12">
-          <p class="text-regular mb-14">Learning Path</p>
-          <h1 class="text-6xl sm:text-5xl font-heading font-semibold mb-16">{learningPath.attributes.title}</h1>
-          <p class="text-2xl mb-14">Get started today!</p>
-          <a class="group relative inline-block h-16 w-80 bg-base3 text-base4 rounded-lg" href="https://infor.tovuti.io/ilt-testing/course/ilt-test">
-            <div class="absolute top-0 left-0 transform -translate-y-1 -translate-x-1 w-full h-full group-hover:translate-y-0 group-hover:translate-x-0 transition duration-300">
-              <div class="flex inline-flex w-full items-center px-4 py-4 justify-center bg-brand11 rounded-lg">
-                <span class="text-base font-semibold uppercase">Register for this Course</span>
-              </div>
-            </div>
-          </a>
-        </div>
+      <div class="w-full flex flex-row flex-wrap lg:border-r border-base6 border-opacity-10">
+        <a href="https://infor.tovuti.io/e-learning/course/distribution-sxe-v11-using-inventory-control-self-directed-learning"><Card1 title="Distribution SX.e: v11 Using Inventory Control - Self-directed Learning" /></a>
+        <a href="https://infor.tovuti.io/e-learning/course/distribution-sxe-v11-using-warehouse-planning-self-directed-learning"><Card1 title="Distribution SX.e: v11 Using Warehouse Planning - Self-directed Learning" /></a>
+        <a href="https://infor.tovuti.io/e-learning/course/distribution-sxe-v11-using-pricing-self-directed-learning"><Card1 title="Distribution SX.e: v11 Using Pricing - Self-directed Learning" /></a>
+        <a href="https://infor.tovuti.io/e-learning/course/cloudsuite-distribution-using-proof-of-delivery-for-managers-self-directed-learning"><Card1 title="CloudSuite Distribution: Using Proof of Delivery for Managers - Self-directed Learning" /></a>
+        <a href="https://infor.tovuti.io/e-learning/course/cloudsuite-distribution-using-proof-of-delivery-for-managers-self-directed-learning"><Card1 title="CloudSuite Distribution: Using Proof of Delivery for Drivers" /></a>
+        <a href="https://infor.tovuti.io/e-learning/course/distribution-sxe-v11-using-inventory-control-self-directed-learning"><Card1 title="CloudSuite Distribution: Using Birst Reports and Dashboards - Self-directed Learning" /></a>
       </div>
-      <div class="w-full lg:w-1/2 xl:w-3/5 px-4 xl:pl-24">
+      <!-- <div class="w-full lg:w-1/2 xl:w-3/5 px-4 xl:pl-24">
         <div class="lg:max-w-xl">
           <div class="flex flex-wrap -mx-4 lg:pt-44 pb-24 xl:pb-32">
             <div class="w-full sm:w-1/2 px-4 mb-32">
@@ -84,7 +82,7 @@ const { learningPath } = Astro.props;
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </section>
