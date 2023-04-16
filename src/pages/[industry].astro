@@ -1,0 +1,33 @@
+---
+import Tabs from '../components/organisms/Tabs.astro';
+import Tabs2 from '../components/organisms/Tabs2.astro';
+import Layout from '../layouts/Layout.astro';
+import Roles from '../components/organisms/Roles.astro';
+
+export async function getStaticPaths() {
+  const response = await fetch('http://127.0.0.1:1337/api/industries?populate=*');
+    const { data } = await response.json();
+
+    return data.map((industry) => {
+      return {
+        params: { industry: industry.attributes.slug },
+        props: { industry },
+      };
+    });
+}
+
+const { industry } = Astro.params;
+const { industries, learningRole, title } = Astro.props;
+
+---
+<Layout title="index">
+
+    
+  <div class="flex flex-col gap-0">
+    <div class=" flex flex-col p-8 mx-auto gap-4 w-full border-b border-base6">
+      <Tabs2 /> 
+      <Tabs /></div></div>
+
+      <Roles letter="A" />
+
+</Layout>

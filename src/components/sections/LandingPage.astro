@@ -1,11 +1,13 @@
 ---
+import _ from 'lodash';
 import Tabs2 from '@components/organisms/Tabs2.astro';
 import Card3 from '../organisms/Card3.astro';
 import Tabs from '../organisms/Tabs.astro';
     const response = await fetch("http://127.0.0.1:1337/api/industries?populate=*");
-    const { data } = await response.json();
+    const { data } = await response.json(_.startsWith('title', 'a', 0));
 export async function getStaticPaths() {
 	return data.map((role) => ({
+    
 		params: { slug: role.attributes.slug },
       props: { role },
 	}));

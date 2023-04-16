@@ -1,16 +1,51 @@
 ---
 
-import Layout from '../../layouts/Layout.astro';
-
 import Layout from '../layouts/Layout.astro';
-import LandingPage from '../components/sections/LandingPage.astro';
-import FilterButton from '@components/atoms/FilterButton.astro';
+import Card3 from '../components/organisms/Card3.astro';
+import Tabs2 from '../components/organisms/Tabs2.astro';
 
 
+const response = await fetch('http://127.0.0.1:1337/api/industries?populate=*');
+const { data } = await response.json();
+
+// export async function getStaticPaths() {
+//   const response = await fetch('http://127.0.0.1:1337/api/industries?populate=*');
+//     const { data } = await response.json();
+
+//     return data.map((industry) => {
+//       return {
+//         params: { industry: industry.attributes.slug },
+//         props: { industry },
+//       };
+//     });
+// }
+
+const { industry } = Astro.props;
 
 ---
 
 <Layout title="test">
-    <!-- <FilterButton text="test" /> -->
-    <LandingPage />
+
+<div class="flex w-full flex-row">
+    <div class="p-8 mx-auto w-full border-b border-base6"> <Tabs2 /> </div>
+  </div>
+  <section>
+    <div class="p-8">
+        <h2 class="mb-5 text-6xl md:text-8xl xl:text-10xl text-center font-bold font-heading font-heading tracking-px-n leading-none">Infor Academy</h2>
+        <p class=" text-lg text-base9 text-center font-medium leading-normal md:max-w-lg mx-auto">Lorem ipsum dolor sit amet, to the con adipiscing. Volutpat tempor to the condimentum vitae vel purus.</p>
+        <div class="md:max-w-6xl mx-auto">
+          <div class="grid grid-cols-2 gap-6 mt-12 mb-12">
+            
+              {
+    data.map((industry) => (
+      <>
+              <Card3 url={`${industry.attributes.slug}`} image={industry.attributes.cardImage.data.attributes.url} title={`${industry.attributes.title}`} />
+      </>
+    ))
+  } 
+          </div>
+        </div>
+      </div>
+    </section>
+
 </Layout>

@@ -1,0 +1,34 @@
+---
+
+import Layout from '../../layouts/Layout.astro';
+import SectionNine from '../../components/sections/SectionNine.astro';
+import Tabs2 from '../../components/organisms/Tabs2.astro';
+import NewCard1 from '../../components/molecules/NewCard1.astro';
+
+    /* PRODKT API */
+    const response = await fetch('http://127.0.0.1:1337/api/learning-paths?populate=*');
+    const { data } = await response.json();
+    /* END PRODKT API */
+---
+<!-- {
+    data.map((learningPath) => (
+      <>
+      <a href={`/learning-paths/${learningPath.attributes.slug}`}> {learningPath.attributes.title} </a>
+      </>
+    ))
+  } -->
+<Layout title="index">
+
+<!-- <a href={`/learning-paths/${learningPath.attributes.slug}`}> {learningPath.attributes.title} </a> -->
+<div class="mx-auto w-full border-b border-base6 p-8"> <Tabs2 /> </div>
+<SectionNine class="overflow-hidden">
+  <div class="grid grid-cols-3 justify-items-stretch grid-rows-1 relative top-0 gap-4 p-8 items-stretch">
+  {
+    data.map((learningPath) => (
+      <NewCard1 url={`${learningPath.attributes.slug}`} title={`${learningPath.attributes.title}`} description={`${learningPath.attributes.description}`} />
+      
+    ))
+  }
+  </div>
+</SectionNine>
+</Layout>

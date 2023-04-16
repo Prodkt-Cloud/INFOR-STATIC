@@ -1,0 +1,41 @@
+---
+
+import Layout from '../layouts/Layout.astro';
+import SectionNine from '../components/sections/SectionNine.astro';
+import Tabs2 from '../components/organisms/Tabs2.astro';
+import NewCard1 from '../components/molecules/NewCard1.astro';
+
+
+export async function getStaticPaths() {
+  const response = await fetch('http://127.0.0.1:1337/api/learning-lifecycle?populate=*');
+    const { data } = await response.json();
+
+    if (data && Array.isArray(data)) {
+    return data.map((lifecycle) => {
+      return {
+        params: { lifecycle: lifecycle.attributes.slug },
+        props: { lifecycle },
+      };
+    });
+  } else {
+    console.error('No data found');
+    return [];
+  }
+}
+
+const { lifecycle } = Astro.props;
+---
+<!-- {
+    data.map((learningPath) => (
+      <>
+      <a href={`/learning-paths/${learningPath.attributes.slug}`}> {learningPath.attributes.title} </a>
+      </>
+    ))
+  } -->
+<Layout title="index">
+
+<!-- <a href={`/learning-paths/${learningPath.attributes.slug}`}> {learningPath.attributes.title} </a> -->
+<div class="mx-auto w-full border-b border-base6 p-8"> <Tabs2 /> </div>
+
+<NewCard1 url={`${lifecycle.attributes.slug}`} title={`${lifecycle.attributes.title}`} description={`${lifecycle.attributes.description}`} />
+</Layout>
