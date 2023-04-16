@@ -2,13 +2,7 @@
 import Tabs from '../../components/organisms/Tabs.astro';
 import Tabs2 from '../../components/organisms/Tabs2.astro';
 import Layout from '../../layouts/Layout.astro';
-try {
-  let [learningRole, industries, learningRoles] = await Promise.all([
-    fetch("http://127.0.0.1:1337/api/learning-roles?populate=*")
-  ]);
-} catch (err) {
-  console.log(err);
-}
+import Roles from '../../components/organisms/Roles.astro';
 
 export async function getStaticPaths() {
   const response = await fetch('http://127.0.0.1:1337/api/industries?populate=*');
@@ -22,10 +16,9 @@ export async function getStaticPaths() {
     });
 }
 
-const { industries, learningRoles } = Astro.props;
+const { industries, learningRole } = Astro.props;
 
 ---
-
 <Layout title="index">
 
     
@@ -34,9 +27,6 @@ const { industries, learningRoles } = Astro.props;
       <Tabs2 /> 
       <Tabs /></div></div>
 
+      <Roles />
 
-      <ul class="grid grid-cols-4 mx-auto max-w-5xl mb-8" id="infor_A">
-
-              <h2>{industries.attributes.title}</h2>
-</ul>
 </Layout>

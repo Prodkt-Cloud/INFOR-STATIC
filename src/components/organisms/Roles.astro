@@ -1,0 +1,13 @@
+---
+const response = await fetch('http://127.0.0.1:1337/api/learning-roles?populate=*');
+    const { data } = await response.json();
+---
+
+
+<ul class="grid grid-cols-4 mx-auto max-w-5xl mb-8" id="infor_A">
+    {
+        data.map((role) => (
+      <li><a href={`/roles/${role.attributes.slug}`} class="text-xs block font-bold text-base11 hover:text-base12 px-4 py-3">{`${role.attributes.title}`}</a></li>
+      ))
+      }
+</ul>
