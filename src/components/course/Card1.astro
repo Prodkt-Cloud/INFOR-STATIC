@@ -4,10 +4,9 @@ const response = await fetch('http://127.0.0.1:1337/api/courses?populate=*');
 
     const { title } = Astro.props;
 ---
-<div class="max-w-1/2 pt-24 lg:pb-40 text-left px-12">
+<div class="pt-24 bg-base1 rounded-xl lg:pb-40 text-left px-12">
     <p class="text-regular mb-14">Course</p>
-    <h1 class="text-6xl sm:text-5xl font-heading font-semibold mb-16">{title}</h1>
-    <p class="text-2xl mb-14">Get started today!</p>
+    <h1 class="text-3xl sm:text-3xl font-heading font-semibold mb-16">{title}</h1>
     <div class="group relative inline-block h-16 w-80 bg-base3 text-base4 rounded-lg">
       <div class="absolute top-0 left-0 transform -translate-y-1 -translate-x-1 w-full h-full group-hover:translate-y-0 group-hover:translate-x-0 transition duration-300">
         <div class="flex inline-flex w-full items-center px-4 py-4 justify-center bg-brand11 rounded-lg">

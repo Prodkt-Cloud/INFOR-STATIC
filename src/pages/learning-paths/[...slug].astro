@@ -30,60 +30,20 @@ console.log(learningPath);
 <div class="p-8 mx-auto w-full border-b border-base6"> <Tabs2 /> </div>
 
 <section class="relative">
-  <div class="absolute top-0 left-0 h-px max-w-3xl bg-opacity-10"></div>
-  <div class="absolute bottom-0 left-0 mb-0 h-px w-full bg-base6 bg-opacity-20"></div>
-  <div class="container px-4 mx-auto">
-    <div class="flex flex-wrap -mx-4">
-      <div class="w-full flex flex-row flex-wrap lg:border-r border-base6 border-opacity-10">
-        <a href="https://infor.tovuti.io/e-learning/course/distribution-sxe-v11-using-inventory-control-self-directed-learning"><Card1 title="Distribution SX.e: v11 Using Inventory Control - Self-directed Learning" /></a>
-        <a href="https://infor.tovuti.io/e-learning/course/distribution-sxe-v11-using-warehouse-planning-self-directed-learning"><Card1 title="Distribution SX.e: v11 Using Warehouse Planning - Self-directed Learning" /></a>
-        <a href="https://infor.tovuti.io/e-learning/course/distribution-sxe-v11-using-pricing-self-directed-learning"><Card1 title="Distribution SX.e: v11 Using Pricing - Self-directed Learning" /></a>
-        <a href="https://infor.tovuti.io/e-learning/course/cloudsuite-distribution-using-proof-of-delivery-for-managers-self-directed-learning"><Card1 title="CloudSuite Distribution: Using Proof of Delivery for Managers - Self-directed Learning" /></a>
-        <a href="https://infor.tovuti.io/e-learning/course/cloudsuite-distribution-using-proof-of-delivery-for-managers-self-directed-learning"><Card1 title="CloudSuite Distribution: Using Proof of Delivery for Drivers" /></a>
-        <a href="https://infor.tovuti.io/e-learning/course/distribution-sxe-v11-using-inventory-control-self-directed-learning"><Card1 title="CloudSuite Distribution: Using Birst Reports and Dashboards - Self-directed Learning" /></a>
+
+  <p class="text-regular my-14 mx-16">Learning Path</p>
+  <h1 class="text-6xl sm:text-5xl font-heading mx-16 font-semibold mb-16">{learningPath.attributes.title}</h1>
+  <!-- <div class="absolute top-0 left-0 h-px max-w-3xl bg-opacity-10"></div>
+  <div class="absolute bottom-0 left-0 mb-0 h-px w-full bg-base6 bg-opacity-20"></div> -->
+  <div class="container w-full px-4 mx-auto">
+      <div class="grid grid-cols-2 gap-4 lg:border-r border-base6 border-opacity-10">
+        <a class="w-auto" href="https://infor.tovuti.io/e-learning/course/distribution-sxe-v11-using-inventory-control-self-directed-learning"><Card1 title="Distribution SX.e: v11 Using Inventory Control - Self-directed Learning" /></a>
+        <a class="w-auto"  href="https://infor.tovuti.io/e-learning/course/distribution-sxe-v11-using-warehouse-planning-self-directed-learning"><Card1 title="Distribution SX.e: v11 Using Warehouse Planning - Self-directed Learning" /></a>
+        <a class="w-auto"  href="https://infor.tovuti.io/e-learning/course/distribution-sxe-v11-using-pricing-self-directed-learning"><Card1 title="Distribution SX.e: v11 Using Pricing - Self-directed Learning" /></a>
+        <a class="w-auto"  href="https://infor.tovuti.io/e-learning/course/cloudsuite-distribution-using-proof-of-delivery-for-managers-self-directed-learning"><Card1 title="CloudSuite Distribution: Using Proof of Delivery for Managers - Self-directed Learning" /></a>
+        <a class="w-auto" href="https://infor.tovuti.io/e-learning/course/cloudsuite-distribution-using-proof-of-delivery-for-managers-self-directed-learning"><Card1 title="CloudSuite Distribution: Using Proof of Delivery for Drivers" /></a>
+        <a class="w-auto" href="https://infor.tovuti.io/e-learning/course/distribution-sxe-v11-using-inventory-control-self-directed-learning"><Card1 title="CloudSuite Distribution: Using Birst Reports and Dashboards - Self-directed Learning" /></a>
       </div>
-      <!-- <div class="w-full lg:w-1/2 xl:w-3/5 px-4 xl:pl-24">
-        <div class="lg:max-w-xl">
-          <div class="flex flex-wrap -mx-4 lg:pt-44 pb-24 xl:pb-32">
-            <div class="w-full sm:w-1/2 px-4 mb-32">
-              <div class="max-w-2xs mx-auto xs:px-10">
-                <img class="mb-10" src="/icons/dataflow-03.svg" alt="">
-                <h4 class="text-3xl font-medium mb-2">Tovuti Certification</h4>
-                <p>As always. Eloquent UI, with big hints of Learning & Growth.</p>
-              </div>
-            </div>
-            <div class="w-full sm:w-1/2 px-4 mb-32">
-              <div class="max-w-2xs mx-auto xs:px-10">
-                <img class="mb-10" src="/icons/bar-chart-01.svg" alt="">
-                <h4 class="text-3xl font-medium mb-2">Upskilling teams at Infor 2023</h4>
-                <p>Oh, irreplaceable. Infor unlocking growth potential in students across the globe.</p>
-              </div>
-            </div>
-            <div class="w-full px-4 mb-32 sm:mb-0">
-              <div class="max-w-2xs mx-auto xs:px-10">
-                <img class="mb-10" src="/icons/lightbulb-05.svg" alt="">
-                <h4 class="text-3xl font-medium mb-2">WeDefine & REfine</h4>
-                <p>Once you've identified your next move, it's time to prepare. This may involve conducting market research or developing a strategic plan. The key is to make sure that you're fully prepared before moving forward.</p>
-              </div>
-            </div>
-            <div class="w-full mt-32 px-4 text-center">
-              <a class="group inline-flex items-center" href="#">
-                <div class="relative flex items-center justify-center w-20 h-20 mr-6 rounded-full">
-                  <span class="text-gray-300 group-hover:text-blueGray-900 absolute top-0 left-0 w-full h-full transform group-hover:rotate-180 transition duration-500">
-                    <svg width="81" height="81" viewbox="0 0 82 82" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="80" height="80" rx="39" stroke="currentColor" stroke-width="2" stroke-dasharray="2 13"></rect></svg>
-                  </span>
-                  <span class="flex items-center text-2xl font-semibold">
-                    <span class="text-xl">+</span>
-                    <span "text-xl">8</span>
-                  </span>
-                </div>
-                <span class="text-lg font-bold text-brand9">Includes 8 Courses!</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div> -->
-    </div>
   </div>
 </section>
 

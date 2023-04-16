@@ -38,7 +38,7 @@ export async function getStaticPaths() {
   <h1 class="text-3xl font-bold text-base9">A</h1>
   </div>
 <SectionNine class=" overflow-hidden">
-  <div class="grid grid-cols-3 justify-items-stretch grid-rows-1 relative top-0 gap-4 items-stretch">
+  <div class="grid grid-cols-2 justify-items-stretch grid-rows-1 relative top-0 gap-4 items-stretch">
   {
     data.map((learningPath) => (
       <NewCard1 url={`/learning-paths/${learningRole.attributes.slug}`} title={`${learningRole.attributes.title}`} description={`${learningRole.attributes.description}`} />
