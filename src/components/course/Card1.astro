@@ -4,7 +4,7 @@ const response = await fetch('http://127.0.0.1:1337/api/courses?populate=*');
 
     const { title } = Astro.props;
 ---
-<div class="pt-24 bg-base1 rounded-xl lg:pb-40 text-left px-12">
+<div class="pt-24 h-full bg-base1 rounded-xl lg:pb-40 text-left px-12">
     <p class="text-regular mb-14">Course</p>
     <h1 class="text-3xl sm:text-3xl font-heading font-semibold mb-16">{title}</h1>
     <div class="group relative inline-block h-16 w-80 bg-base3 text-base4 rounded-lg">
