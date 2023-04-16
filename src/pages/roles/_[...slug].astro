@@ -11,10 +11,23 @@ export async function getStaticPaths() {
       };
     });
 }
-
+const { learningRole } = Astro.props;
 ---
 <Layout title="test">
 
+
+<div class="flex flex-col gap-0 max-w-5xl mx-auto mb-8 w-full justify-left px-4 py-3">
+  <h1 class="text-3xl font-bold text-gray-800">A</h1>
+  </div>
+  <ul class="grid grid-cols-4">
+
+    {
+      data.map((learningRole) => (
+    <li><a href={`/${learningRole.attributes.slug}`}>{`${learningRole.attributes.title}`}</a></li>
+    ))
+    }
   
+  </ul>
+
 
 </Layout>

@@ -90,7 +90,7 @@ box-shadow: 1px 0px 10px 4px rgba(255, 255, 255, 1);
   }
 
   #inforMainSection {
-    @apply transition-all duration-1000 pl-[calc(33.3%+48px)];
+    @apply transition-all duration-1000 pl-[calc(33.3%+32px)];
   }
 
   #inforMainSection.collapseFilters {

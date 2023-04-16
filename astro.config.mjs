@@ -4,7 +4,6 @@ import UnoCSS from "@unocss/astro";
 import image from "@astrojs/image";
 import pagefind from "astro-pagefind";
 import vercel from "@astrojs/vercel/static";
-
 import alpinejs from "@astrojs/alpinejs";
 
 // https://astro.build/config

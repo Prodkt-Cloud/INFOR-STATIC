@@ -8,7 +8,6 @@ import NewCard1 from '../../components/molecules/NewCard1.astro';
     /* PRODKT API */
     const response = await fetch('http://127.0.0.1:1337/api/learning-paths?populate=*');
     const { data } = await response.json();
-    console.log(data);
     /* END PRODKT API */
 ---
 <!-- {
@@ -21,9 +20,9 @@ import NewCard1 from '../../components/molecules/NewCard1.astro';
 <Layout title="index">
 
 <!-- <a href={`/learning-paths/${learningPath.attributes.slug}`}> {learningPath.attributes.title} </a> -->
-<div class="p-8 pt-12 mx-auto w-full border-b border-base6 mb-6"> <Tabs2 /> </div>
-<SectionNine class=" overflow-hidden">
-  <div class="grid grid-cols-3 justify-items-stretch grid-rows-1 relative top-0 gap-4 items-stretch">
+<div class="mx-auto w-full border-b border-base6 p-8"> <Tabs2 /> </div>
+<SectionNine class="overflow-hidden">
+  <div class="grid grid-cols-3 justify-items-stretch grid-rows-1 relative top-0 gap-4 p-8 items-stretch">
   {
     data.map((learningPath) => (
       <NewCard1 url={`/learning-paths/${learningPath.attributes.slug}`} title={`${learningPath.attributes.title}`} description={`${learningPath.attributes.description}`} />

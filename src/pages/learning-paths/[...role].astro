@@ -8,7 +8,6 @@ import NewCard1 from '../../components/molecules/NewCard1.astro';
     /* PRODKT API */
     const response = await fetch('http://127.0.0.1:1337/api/learning-paths?populate=*');
     const { data } = await response.json();
-    console.log(data);
 
 
 export async function getStaticPaths() {
@@ -34,7 +33,10 @@ export async function getStaticPaths() {
 <Layout title="index">
 
 <!-- <a href={`/learning-paths/${learningPath.attributes.slug}`}> {learningPath.attributes.title} </a> -->
-<div class="p-8 pt-12 mx-auto w-full border-b border-base6 mb-6"> <Tabs2 /> </div>
+<div class="p-8 mx-auto w-full border-b border-base6"> <Tabs2 /> </div>
+<div class="flex flex-col gap-0 max-w-5xl mx-auto w-full justify-left px-4 py-3">
+  <h1 class="text-3xl font-bold text-base9">A</h1>
+  </div>
 <SectionNine class=" overflow-hidden">
   <div class="grid grid-cols-3 justify-items-stretch grid-rows-1 relative top-0 gap-4 items-stretch">
   {
