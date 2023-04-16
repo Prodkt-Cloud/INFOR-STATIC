@@ -16,6 +16,7 @@ export async function getStaticPaths() {
     });
 }
 
+const { slug } = Astro.params;
 const { industries, learningRole } = Astro.props;
 
 ---
@@ -27,6 +28,6 @@ const { industries, learningRole } = Astro.props;
       <Tabs2 /> 
       <Tabs /></div></div>
 
-      <Roles />
+      <Roles letter="A" />
 
 </Layout>
