@@ -1,0 +1,48 @@
+---
+
+import Layout from '../../layouts/Layout.astro';
+import SectionNine from '../../components/sections/SectionNine.astro';
+import Tabs2 from '../../components/organisms/Tabs2.astro';
+import NewCard1 from '../../components/molecules/NewCard1.astro';
+
+    /* PRODKT API */
+    const response = await fetch('http://127.0.0.1:1337/api/learning-paths?populate=*');
+    const { data } = await response.json();
+    console.log(data);
+
+
+export async function getStaticPaths() {
+  const response = await fetch('http://127.0.0.1:1337/api/learning-roles?populate=*');
+    const { data } = await response.json();
+
+    return data.map((learningRole) => {
+      return {
+        params: { slug: learningRole.attributes.slug },
+        props: { learningRole },
+      };
+    });
+}
+    /* END PRODKT API */
+---
+<!-- {
+    data.map((learningPath) => (
+      <>
+      <a href={`/learning-paths/${learningPath.attributes.slug}`}> {learningPath.attributes.title} </a>
+      </>
+    ))
+  } -->
+<Layout title="index">
+
+<!-- <a href={`/learning-paths/${learningPath.attributes.slug}`}> {learningPath.attributes.title} </a> -->
+<div class="p-8 pt-12 mx-auto w-full border-b border-base6 mb-6"> <Tabs2 /> </div>
+<SectionNine class=" overflow-hidden">
+  <div class="grid grid-cols-3 justify-items-stretch grid-rows-1 relative top-0 gap-4 items-stretch">
+  {
+    data.map((learningPath) => (
+      <NewCard1 url={`/learning-paths/${learningRole.attributes.slug}`} title={`${learningRole.attributes.title}`} description={`${learningRole.attributes.description}`} />
+      
+    ))
+  }
+  </div>
+</SectionNine>
+</Layout>
