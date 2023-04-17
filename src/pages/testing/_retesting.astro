@@ -1,0 +1,35 @@
+---
+import _ from 'lodash-es';
+const response = await fetch("http://localhost:1337/api/industries?populate=*");
+const { data } = await response.json();
+
+console.log(data);
+// if(data[0].attributes.learningPaths.data){
+// console.log(learningPaths.data.title);
+// }
+// => 3
+
+// console.log(JSON["data"][0]["attributes"]["learning_item_courses"]["data"]);
+import Layout from '../../layouts/Layout.astro';
+---
+<script>
+
+
+function customizer(learningPaths) {
+  if (_.isElement(learningPaths)) {
+    return value.cloneNode(true);
+  }
+}
+
+var el = _.cloneDeepWith(document.body, customizer);
+ 
+console.log(el === document.body);
+// => false
+console.log(el.nodeName);
+// => 'BODY'
+console.log(el.childNodes.length);
+// => 20
+
+</script>
+    <Layout title="test">
+    </Layout>

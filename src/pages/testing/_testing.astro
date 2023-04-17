@@ -1,0 +1,45 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+        const prodktRes = await fetch("http://localhost:1337/api/learning-roles?populate=*");
+        const { prodkt } = await prodktRes.json();
+        const inforRes = await fetch("http://localhost:1337/api/learning-paths?populate=*");
+        const { infor } = await inforRes.json();
+
+        // millionth try
+    export async function getStaticPaths() {
+        const getProdkt = async () => {
+            const prodktRes = await fetch(
+                `http://localhost:1337/api/learning-roles`
+            );
+            const prodkt = await prodktRes.json();
+            prodkt.map((prodktItem) => {
+            props: { prodktItem }});
+        };
+
+        const getInfor = async () => {
+            const inforRes = await fetch(
+                `http://localhost:1337/api/learning-paths?populate=*`
+            );
+            const infor = await inforRes.json();
+            infor.map((inforItem) => {
+            props: { inforItem }});
+        };
+    }
+    // end millionth try
+
+    const { prodktItem, inforItem } = Astro.props;
+
+    console.log(prodktItem);
+    console.log(inforItem);
+---
+
+<Layout title="testing">
+testing again
+{prodktItem.map((prodktItem) => (
+    <div>
+        <h1>{prodktItem.title}</h1>
+        <p>{prodktItem.description}</p>
+    </div>
+))}
+</Layout>
