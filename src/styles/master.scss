@@ -78,23 +78,23 @@ box-shadow: 1px 0px 10px 4px rgba(255, 255, 255, 1);
 
 
 #toggleFilters.collapseFilters {
-    @apply calc(left-2/6 - -left-1.8/6) transition-all ease-in-out duration-600;
+    @apply calc(left-2/6 - -left-1.8/6) transition-all ease-out duration-600;
   }
    
 #inforHeader {
-    @apply pl-2/6 px-8 transition-all ease-in-out duration-600;
+    @apply pl-2/6 px-8 transition-all ease-out duration-600;
   }
 
   #inforHeader.collapseFilters {
-    @apply pl-8 transition-all ease-in-out duration-600;
+    @apply pl-8 transition-all ease-out duration-600;
   }
 
   #inforMainSection {
-    @apply transition-all ease-in-out duration-600 pl-[calc(33.3%+32px)];
+    @apply transition-all ease-out duration-600 pl-[calc(33.3%+32px)];
   }
 
   #inforMainSection.collapseFilters {
-    @apply transition-all ease-in-out duration-600 pl-[calc(0%+32px)];
+    @apply transition-all ease-out duration-600 pl-[calc(0%+32px)];
   }
 
   div:has( > span + span.inforRole-list) {
@@ -118,3 +118,10 @@ box-shadow: 1px 0px 10px 4px rgba(255, 255, 255, 1);
     @apply text-brand1;
   }
 
+  ol.pagefind-ui__results .svelte-1bkqzc5, ol.pagefind-ui__results {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+}
